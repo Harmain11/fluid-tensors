@@ -22,7 +22,8 @@
   <a href="https://doi.org/10.5281/zenodo.24280041">Preprint / DOI</a> ·
   <a href="https://github.com/Harmain11/fluid-tensors/fork">Fork</a> ·
   <a href="https://github.com/Harmain11/fluid-tensors/issues/new">Contribute</a> ·
-  <a href="mailto:harmainmughal215@gmail.com?subject=Fluid%20Tensors%20research%20collaboration">Collaborate</a>
+  <a href="mailto:harmainmughal215@gmail.com?subject=Fluid%20Tensors%20research%20collaboration">Collaborate</a> ·
+  <a href="https://www.linkedin.com/in/harmain-mughal-7b1845379">LinkedIn</a>
 </p>
 
 <sub>Harmain Dastgir · Independent Researcher · November 16, 2026 · Working preprint (not peer reviewed)</sub>
@@ -209,7 +210,8 @@ Citation metadata are also provided in [`CITATION.cff`](CITATION.cff).
 
 **Harmain Dastgir**  
 Independent Researcher  
-**Email:** harmainmughal215@gmail.com
+**Email:** harmainmughal215@gmail.com  
+**LinkedIn:** [Harmain Dastgir](https://www.linkedin.com/in/harmain-mughal-7b1845379)
 
 The study is self-funded, with no external grant reported and no competing interests declared. Independent replication, critical evaluation, methodological discussion, and future scientific collaboration are welcome.
 
@@ -230,4 +232,4 @@ The manuscript, original figures, and research data are available under **CC BY 
 
 ---
 
-**Fluid Tensors** · [Research website](https://harmain11.github.io/fluid-tensors/) · [GitHub repository](https://github.com/Harmain11/fluid-tensors) · [Zenodo DOI](https://doi.org/10.5281/zenodo.24280041) · [Contact](mailto:harmainmughal215@gmail.com)
+**Fluid Tensors** · [Research website](https://harmain11.github.io/fluid-tensors/) · [GitHub repository](https://github.com/Harmain11/fluid-tensors) · [Zenodo DOI](https://doi.org/10.5281/zenodo.24280041) · [Contact](mailto:harmainmughal215@gmail.com) · [LinkedIn](https://www.linkedin.com/in/harmain-mughal-7b1845379)
