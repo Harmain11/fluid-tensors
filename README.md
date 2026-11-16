@@ -10,7 +10,7 @@
   <a href="https://www.python.org/"><img alt="Python 3.9+" src="https://img.shields.io/badge/Python-3.9%2B-3776AB?style=flat-square&logo=python&logoColor=white"></a>
   <a href="https://numpy.org/"><img alt="NumPy" src="https://img.shields.io/badge/NumPy-Scientific%20Computing-013243?style=flat-square&logo=numpy&logoColor=white"></a>
   <a href="https://matplotlib.org/"><img alt="Matplotlib" src="https://img.shields.io/badge/Matplotlib-Visualization-11557C?style=flat-square"></a>
-  <a href="https://doi.org/10.5281/zenodo.24280041"><img alt="Zenodo DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.24280041.svg"></a>
+  <a href="https://doi.org/10.5281/zenodo.24284827"><img alt="Zenodo DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.24284827.svg"></a>
   <a href="LICENSE-MIT"><img alt="MIT License" src="https://img.shields.io/badge/Code-MIT-4C8B6E?style=flat-square"></a>
   <a href="LICENSES.md"><img alt="Creative Commons BY 4.0" src="https://img.shields.io/badge/Paper%20%26%20Data-CC%20BY%204.0-4C8B6E?style=flat-square"></a>
   <a href="https://github.com/Harmain11/fluid-tensors/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Harmain11/fluid-tensors?style=flat-square&logo=github&label=Stars"></a>
@@ -19,7 +19,9 @@
 <p>
   <a href="https://harmain11.github.io/fluid-tensors/">Interactive Study</a> ·
   <a href="https://harmain11.github.io/fluid-tensors/papers/one-frozen-edit.html">Research Article</a> ·
-  <a href="https://doi.org/10.5281/zenodo.24280041">Preprint / DOI</a> ·
+  <a href="https://doi.org/10.5281/zenodo.24284827">Preprint / DOI</a> ·
+  <a href="docs/REPLICATION_CHALLENGE.md">Replication challenge</a> ·
+  <a href="CONTRIBUTING.md">Contributing guide</a> ·
   <a href="https://github.com/Harmain11/fluid-tensors/fork">Fork</a> ·
   <a href="https://github.com/Harmain11/fluid-tensors/issues/new">Contribute</a> ·
   <a href="mailto:harmainmughal215@gmail.com?subject=Fluid%20Tensors%20research%20collaboration">Collaborate</a> ·
@@ -42,6 +44,7 @@
 - [Interpretation and limitations](#interpretation-and-limitations)
 - [Research roadmap](#research-roadmap)
 - [Publication and citation](#publication-and-citation)
+- [Independent replication challenge](#independent-replication-challenge)
 - [Contributing and collaboration](#contributing-and-collaboration)
 - [License and transparency](#license-and-transparency)
 
@@ -62,7 +65,7 @@ The archive contains **1,024 complete measurements** from 32 question identifier
 | Reported metric | Functional **attenuation** response |
 | Analysis stack | Python, NumPy, Matplotlib |
 | Research website | HTML5, CSS3, vanilla JavaScript, GitHub Pages |
-| Publication | [Open Zenodo preprint](https://doi.org/10.5281/zenodo.24280041) |
+| Publication | [Open Zenodo preprint](https://doi.org/10.5281/zenodo.24284827) |
 
 > **Scientific scope:** The measurements describe functional attenuation, **not mathematical answer accuracy**. This is an archival reanalysis, not an independent GPU reproduction of the original intervention. It does not demonstrate general-purpose model repair or a unique causal neural circuit.
 
@@ -126,7 +129,7 @@ The scripts validate the archive's checksum and complete factorial coverage befo
 
 - [Fork this repository](https://github.com/Harmain11/fluid-tensors/fork) to experiment on your own branch.
 - [Download the repository as ZIP](https://github.com/Harmain11/fluid-tensors/archive/refs/heads/main.zip) to inspect the source without Git.
-- [Read the paper on Zenodo](https://doi.org/10.5281/zenodo.24280041) before interpreting or extending the intervention results.
+- [Read the paper on Zenodo](https://doi.org/10.5281/zenodo.24284827) before interpreting or extending the intervention results.
 
 If you modify the analysis, report the original archived baseline separately from any newly generated data and disclose methodological changes.
 
@@ -188,7 +191,7 @@ The following items are **future research directions**, not completed claims:
 ## Publication and citation
 
 **Dastgir, H. (2026).** *One Frozen Edit, Four Ways to Ask: Prompt-Conditioned Functional Effects in a Transformer.* Working preprint, Zenodo.  
-**DOI:** [10.5281/zenodo.24280041](https://doi.org/10.5281/zenodo.24280041)
+**DOI:** [10.5281/zenodo.24284827](https://doi.org/10.5281/zenodo.24284827)
 
 Citation metadata are also provided in [`CITATION.cff`](CITATION.cff).
 
@@ -200,11 +203,15 @@ Citation metadata are also provided in [`CITATION.cff`](CITATION.cff).
   title     = {One Frozen Edit, Four Ways to Ask: Prompt-Conditioned Functional Effects in a Transformer},
   year      = {2026},
   publisher = {Zenodo},
-  doi       = {10.5281/zenodo.24280041},
-  url       = {https://doi.org/10.5281/zenodo.24280041},
+  doi       = {10.5281/zenodo.24284827},
+  url       = {https://doi.org/10.5281/zenodo.24284827},
   note      = {Working preprint; not peer reviewed}
 }
 ```
+
+## Independent replication challenge
+
+We invite outside researchers to [replay the 1,024-cell archive, independently rerun model-side inference, or test stronger controls](docs/REPLICATION_CHALLENGE.md). See [CONTRIBUTING.md](CONTRIBUTING.md) for reporting standards and the [replication report template](https://github.com/Harmain11/fluid-tensors/issues/new/choose). Negative findings and reconstruction blockers are welcome. CPU-only archive checks do **not** constitute an independent model-side replication.
 
 ## Contributing and collaboration
 
@@ -232,4 +239,4 @@ The manuscript, original figures, and research data are available under **CC BY 
 
 ---
 
-**Fluid Tensors** · [Research website](https://harmain11.github.io/fluid-tensors/) · [GitHub repository](https://github.com/Harmain11/fluid-tensors) · [Zenodo DOI](https://doi.org/10.5281/zenodo.24280041) · [Contact](mailto:harmainmughal215@gmail.com) · [LinkedIn](https://www.linkedin.com/in/harmain-mughal-7b1845379)
+**Fluid Tensors** · [Research website](https://harmain11.github.io/fluid-tensors/) · [GitHub repository](https://github.com/Harmain11/fluid-tensors) · [Zenodo DOI](https://doi.org/10.5281/zenodo.24284827) · [Contact](mailto:harmainmughal215@gmail.com) · [LinkedIn](https://www.linkedin.com/in/harmain-mughal-7b1845379)
