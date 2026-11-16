@@ -1,0 +1,44 @@
+name: Research checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Reproduce and test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install analysis dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Run Python research and site contracts
+        run: python -m unittest discover -s tests -p '*_contract.py' -v
+
+      - name: Run JavaScript data and interaction tests
+        run: node --test tests/*.test.mjs
+
+      - name: Replay archived numerical results
+        run: python reproduce_deposit.py
+
+      - name: Regenerate scientific figures
+        run: python make_study_figures.py
