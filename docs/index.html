@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fluid Tensors — What Happens When a Frozen Weight Edit Meets a Different Prompt?</title>
+  <meta name="description" content="Explore Fluid Tensors: open transformer weight-editing research by Harmain Dastgir. Interact with real archived measurements, inspect six scientific figures, and reproduce the results.">
+  <meta name="author" content="Harmain Dastgir">
+  <meta name="theme-color" content="#f7f4ed">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://harmain11.github.io/fluid-tensors/">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="assets/ft-mark.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fluid Tensors — One Frozen Edit, Four Ways to Ask">
+  <meta property="og:description" content="The edit stayed frozen. The functional response didn't. Explore four prompt conditions, six figures, and the reproducible source-table evidence.">
+  <meta property="og:url" content="https://harmain11.github.io/fluid-tensors/">
+  <meta property="og:image" content="https://harmain11.github.io/fluid-tensors/assets/social-cover.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:image:alt" content="Fluid Tensors: One frozen edit, four ways to ask. A chart of four archived signed attenuation contrasts, not answer accuracy.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fluid Tensors — Open transformer editing research">
+  <meta name="twitter:description" content="32 question units. One frozen historical edit. Four prompt-wording conditions. Six reproducible plots.">
+  <meta name="twitter:image" content="https://harmain11.github.io/fluid-tensors/assets/social-cover.png">
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebSite","name":"Fluid Tensors — Independent ML Research","url":"https://harmain11.github.io/fluid-tensors/","description":"Source-level audit of prompt-conditioned functional effects in a transformer weight intervention.","inLanguage":"en","author":{"@type":"Person","name":"Harmain Dastgir","affiliation":{"@type":"Organization","name":"Independent Researcher"}},"hasPart":{"@type":"ScholarlyArticle","headline":"One Frozen Edit, Four Ways to Ask: Prompt-Conditioned Functional Effects in a Transformer","identifier":"https://doi.org/10.5281/zenodo.24280041","url":"https://harmain11.github.io/fluid-tensors/papers/one-frozen-edit.html"}}
+  </script>
+  <link rel="modulepreload" href="study-data.mjs">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="site.js"></script>
+</head>
+<body class="home-page">
+  <a class="skip-link" href="#main">Skip to research</a>
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <div class="shell nav-shell">
+      <a class="brand" href="index.html" aria-label="Fluid Tensors — home">
+        <span class="brand-symbol" aria-hidden="true"><span>f</span><i></i><span>t</span></span>
+        <span class="brand-name">Fluid Tensors<small>independent research</small></span>
+      </a>
+      <nav class="site-nav" id="primaryNav" aria-label="Primary navigation">
+        <a href="#overview">Overview</a>
+        <a href="#explore">The experiment</a>
+        <a href="#evidence">Evidence</a>
+        <a href="papers/one-frozen-edit.html">Research article</a>
+      </nav>
+      <a class="nav-link-pill" href="https://doi.org/10.5281/zenodo.24280041" target="_blank" rel="noopener noreferrer">Read the preprint <span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" type="button" aria-controls="primaryNav" aria-expanded="false" aria-label="Open navigation"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="overview" aria-labelledby="hero-title">
+      <div class="hero-topline shell"><span class="edition-stamp"><span class="live-dot" aria-hidden="true"></span> Open research / Study 01</span><span class="hero-index">16 NOVEMBER 2026 <span class="thin-slash">/</span> ML SYSTEMS</span></div>
+      <div class="shell hero-layout">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="section-numeral">01</span> A question about weight editing</p>
+          <h1 id="hero-title">The edit stayed <em>frozen.</em><br>The effect <span class="underline-phrase">didn’t.</span></h1>
+          <p class="hero-standfirst">We changed how a question was asked—not the historical weight edit. The model’s <strong>measured response</strong> changed with it.</p>
+          <p class="hero-description">An open, question-level audit of prompt-conditioned functional effects in a transformer. A narrower but more revealing result than a blanket claim of “model repair.”</p>
+          <div class="cta-row">
+            <a class="button button-ink" href="#explore">Explore the finding <span aria-hidden="true">↓</span></a>
+            <a class="button button-paper" href="papers/one-frozen-edit.html">Read the full study <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="hero-fine">Working preprint · Not peer reviewed · Source-table reanalysis, not a new model run</p>
+        </div>
+        <div class="hero-art" role="img" aria-label="Editorial visualization comparing four archived signed-edit prompt conditions: original positive 0.206, reworded negative 0.021, formal negative 0.046, and terse near-zero negative 0.002. These are attenuation contrasts, not answer accuracy.">
+          <div class="art-top"><span>FIELD NOTE / 001</span><span>PARAMETERS HELD FIXED</span></div>
+          <div class="art-diagram">
+            <div class="art-orbit art-orbit-a"></div><div class="art-orbit art-orbit-b"></div><div class="art-orbit art-orbit-c"></div>
+            <div class="art-core">θ<span aria-hidden="true">↗</span></div>
+            <span class="art-coordinate art-coordinate-1">θ₀ = frozen</span><span class="art-coordinate art-coordinate-2">Δ response ≠ constant</span>
+          </div>
+          <div class="art-variants" aria-hidden="true">
+            <div><span>01 &nbsp; Original</span><strong>+0.206</strong><i class="mini-bar mini-positive" style="--bar:84%"></i></div>
+            <div><span>02 &nbsp; Reworded</span><strong>−0.021</strong><i class="mini-bar mini-negative" style="--bar:20%"></i></div>
+            <div><span>03 &nbsp; Formal</span><strong>−0.046</strong><i class="mini-bar mini-negative" style="--bar:37%"></i></div>
+            <div><span>04 &nbsp; Terse</span><strong>−0.002</strong><i class="mini-bar mini-negative" style="--bar:5%"></i></div>
+          </div>
+          <div class="art-bottom"><span>FIG / A — RESEARCH GEOMETRY</span><span>ATTENUATION ≠ ACCURACY</span></div>
+        </div>
+      </div>
+      <div class="hero-footer shell"><span>Scroll to investigate <span aria-hidden="true">↓</span></span><span>Evidence first. Interpretation second.</span></div>
+    </section>
+
+    <section class="numbers-strip" aria-label="Study at a glance">
+      <div class="shell numbers-grid">
+        <div><span class="stat-value">1,024</span><span class="stat-label">Archived response cells</span></div>
+        <div><span class="stat-value">32</span><span class="stat-label">Paired question units</span></div>
+        <div><span class="stat-value">4<span class="small-operator">×</span>4</span><span class="stat-label">Wordings × instructions</span></div>
+        <div><span class="stat-value">01</span><span class="stat-label">Historical model/edit setup</span></div>
+      </div>
+    </section>
+
+    <section class="section-pad experiment-section" id="explore" aria-labelledby="explore-title">
+      <div class="shell">
+        <div class="section-intro reveal">
+          <p class="eyebrow"><span class="section-numeral">02</span> The core observation</p>
+          <div class="split-heading"><h2 id="explore-title">Four ways to ask.<br><em>One frozen edit.</em></h2><p>Choose a wording below. Each value is the signed direction’s mean <strong>math-plus-format minus generic</strong> attenuation response over the same 32 archived questions.</p></div>
+        </div>
+        <div class="experiment-panel reveal" data-tone="positive">
+          <div class="experiment-controls">
+            <div class="panel-kicker"><span class="tiny-star" aria-hidden="true">✳</span> INTERACTIVE EVIDENCE / 01</div>
+            <h3>Change the prompt wording</h3>
+            <p>The intervention remains the same historical edit. Only the archived wording condition changes.</p>
+            <div class="wording-controls" role="group" aria-label="Select archived prompt wording">
+              <button type="button" data-wording="original" aria-pressed="true"><span>01</span> Original <span class="arrow" aria-hidden="true">↗</span></button>
+              <button type="button" data-wording="reworded" aria-pressed="false"><span>02</span> Reworded <span class="arrow" aria-hidden="true">↗</span></button>
+              <button type="button" data-wording="formal" aria-pressed="false"><span>03</span> Formal <span class="arrow" aria-hidden="true">↗</span></button>
+              <button type="button" data-wording="terse" aria-pressed="false"><span>04</span> Terse <span class="arrow" aria-hidden="true">↗</span></button>
+            </div>
+            <p class="control-footnote">This explorer replays stored averages. It does not run or repair a model in your browser.</p>
+          </div>
+          <div class="experiment-display">
+            <div class="display-top"><span>SIGNED EDIT / MEAN CONTRAST</span><span id="wordingTag">ORIGINAL WORDING</span></div>
+            <div class="contrast-value-wrap"><output id="contrastOutput" aria-live="polite" aria-atomic="true">+0.206</output><span>Δ attenuation</span></div>
+            <div class="axis-caption"><span>−0.25</span><span>0</span><span>+0.25</span></div>
+            <div class="signed-track" role="img" aria-label="Original wording contrast, positive 0.206 on a scale from negative 0.25 to positive 0.25"><span class="track-center"></span><span class="track-grid"></span><span id="contrastMeter" class="contrast-meter positive" style="width:41.10849%"></span></div>
+            <div class="display-interpretation"><span class="micro-label">INTERPRETATION</span><h3 id="wordingHeading">A strong positive response</h3><p id="wordingDescription">The archived signed edit exhibited a +0.206 average math-plus-format versus generic attenuation contrast under the original wording.</p></div>
+            <div class="metric-disclaimer"><span aria-hidden="true">!</span><p><strong>Functional attenuation only.</strong> These numbers do not measure math-answer accuracy, causal circuits, or general-purpose model repair.</p></div>
+          </div>
+        </div>
+        <details class="data-details">
+          <summary><span>See all four exact recorded means</span><span class="details-symbol" aria-hidden="true">+</span></summary>
+          <div class="data-table-wrap"><table id="dataset-fallback"><caption>Archived signed-edit attenuation contrasts by wording; math-plus-format minus generic</caption><thead><tr><th scope="col">Wording</th><th scope="col">Mean contrast</th><th scope="col">Meaning</th></tr></thead><tbody><tr><th scope="row">Original</th><td>+0.205542</td><td>Positive response</td></tr><tr><th scope="row">Reworded</th><td>−0.020673</td><td>Small negative response</td></tr><tr><th scope="row">Formal</th><td>−0.045819</td><td>Negative response</td></tr><tr><th scope="row">Terse</th><td>−0.002337</td><td>Near-zero response</td></tr></tbody></table></div>
+        </details>
+      </div>
+    </section>
+
+    <section class="method-section section-pad" id="method" aria-labelledby="method-title">
+      <div class="shell">
+        <div class="method-header reveal"><div><p class="eyebrow"><span class="section-numeral">03</span> Design, not magic</p><h2 id="method-title">What did the<br><em>experiment hold fixed?</em></h2></div><p>One archived response matrix, one historical edit setting, and repeated measurements from 32 question identifiers. The study audits a response interaction—it is not a fresh inference benchmark.</p></div>
+        <div class="method-map reveal" aria-label="Study design">
+          <div class="method-node"><span class="node-tag">A / MODEL</span><strong>Qwen2.5-1.5B</strong><p>Single historical setup</p></div>
+          <span class="method-link" aria-hidden="true">→</span>
+          <div class="method-node"><span class="node-tag">B / DIRECTIONS</span><strong>Signed / 90°</strong><p>One rotated control</p></div>
+          <span class="method-link" aria-hidden="true">→</span>
+          <div class="method-node"><span class="node-tag">C / INPUTS</span><strong>4 × 4</strong><p>Wordings × templates</p></div>
+          <span class="method-link" aria-hidden="true">→</span>
+          <div class="method-node"><span class="node-tag">D / UNITS</span><strong>32 questions</strong><p>Repeated factorial cells</p></div>
+        </div>
+        <p class="method-bottom">A total of <strong>1,024 stored cells</strong> are not the same as 1,024 independent questions. <a href="papers/one-frozen-edit.html#methods">Examine the complete method <span aria-hidden="true">↗</span></a></p>
+      </div>
+    </section>
+
+    <section class="section-pad evidence-section" id="evidence" aria-labelledby="evidence-title">
+      <div class="shell">
+        <div class="section-intro reveal"><p class="eyebrow"><span class="section-numeral">04</span> Open the evidence</p><div class="split-heading"><h2 id="evidence-title">Six figures.<br><em>Nothing hidden.</em></h2><p>Every figure is recalculated from the archived CSV. Explore the result, the question-level variation, the rotated control, and the confounds.</p></div></div>
+        <div class="figure-grid">
+          <figure class="figure-card feature-card reveal"><button class="figure-open" type="button" data-figure-open aria-label="Enlarge Figure 1: wording effects"><img src="assets/figure01_wording_mean_with_ci.png" alt="Four signed-edit wording contrasts with descriptive uncertainty intervals; original is positive and the other variants are near-zero or negative." loading="lazy"><span class="figure-zoom" aria-hidden="true">↗</span></button><figcaption><span class="fig-index">FIGURE 01 <span>PRIMARY</span></span><strong>A different phrasing, a different response.</strong><p>The mean signed-edit attenuation contrast shifts across wording families.</p></figcaption></figure>
+          <figure class="figure-card reveal"><button class="figure-open" type="button" data-figure-open aria-label="Enlarge Figure 2: direction control"><img src="assets/figure02_direction_control.png" alt="Contrasts of the historical signed edit and one ninety-degree rotated control across wording families." loading="lazy"><span class="figure-zoom" aria-hidden="true">↗</span></button><figcaption><span class="fig-index">FIGURE 02 <span>CONTROL</span></span><strong>Does direction matter?</strong><p>Compare the signed vector with one 90° rotated control.</p></figcaption></figure>
+          <figure class="figure-card reveal"><button class="figure-open" type="button" data-figure-open aria-label="Enlarge Figure 3: all paired questions"><img src="assets/figure03_question_level_paired_effects.png" alt="All thirty-two paired question-level original-minus-reworded contrasts, showing positive but heterogeneous effects." loading="lazy"><span class="figure-zoom" aria-hidden="true">↗</span></button><figcaption><span class="fig-index">FIGURE 03 <span>PAIRED EVIDENCE</span></span><strong>The average isn't every question.</strong><p>All 32 paired effects were positive, with varied magnitudes.</p></figcaption></figure>
+          <figure class="figure-card reveal"><button class="figure-open" type="button" data-figure-open aria-label="Enlarge Figure 4: complete factorial heatmaps"><img src="assets/figure04_factorial_response_heatmaps.png" alt="Complete raw attenuation response heatmaps by wording and instruction template for signed and rotated directions." loading="lazy"><span class="figure-zoom" aria-hidden="true">↗</span></button><figcaption><span class="fig-index">FIGURE 04 <span>FULL MATRIX</span></span><strong>Look beyond one summary contrast.</strong><p>All wording-by-instruction means for both directions.</p></figcaption></figure>
+          <figure class="figure-card reveal"><button class="figure-open" type="button" data-figure-open aria-label="Enlarge Figure S1: bootstrap uncertainty"><img src="assets/figureS1_bootstrap_distribution.png" alt="Histogram of 20,000 question-level bootstrap mean estimates with interval limits." loading="lazy"><span class="figure-zoom" aria-hidden="true">↗</span></button><figcaption><span class="fig-index">FIGURE S1 <span>UNCERTAINTY</span></span><strong>How stable is the paired estimate?</strong><p>Question-level bootstrap distribution—not a new model run.</p></figcaption></figure>
+          <figure class="figure-card reveal"><button class="figure-open" type="button" data-figure-open aria-label="Enlarge Figure S2: prompt token lengths"><img src="assets/figureS2_prompt_token_diagnostics.png" alt="Prompt token-length heatmap and 14 to 15 extra tokens in math-plus-format compared with generic templates." loading="lazy"><span class="figure-zoom" aria-hidden="true">↗</span></button><figcaption><span class="fig-index">FIGURE S2 <span>CONFOUND</span></span><strong>What else changed in the prompt?</strong><p>Prompt length and positions were not matched.</p></figcaption></figure>
+        </div>
+        <div class="evidence-bottom reveal"><p>All six plots and underlying cell values can be recreated with one local Python script. No API key or model download is required for the numeric replay.</p><a class="text-arrow" href="https://github.com/Harmain11/fluid-tensors" target="_blank" rel="noopener noreferrer">Explore data &amp; plotting code <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+
+    <section class="limitations-section section-pad" id="limitations" aria-labelledby="limitations-title">
+      <div class="shell limitations-layout">
+        <div class="limitations-lead reveal"><p class="eyebrow"><span class="section-numeral">05</span> The honest boundary</p><h2 id="limitations-title">A strong contrast.<br><em>Not a claim of repair.</em></h2><p>A serious result also says what it cannot establish. This is where the next experiments begin.</p><a class="button button-light" href="papers/one-frozen-edit.html#limitations">Read the limitations <span aria-hidden="true">↗</span></a></div>
+        <div class="limitation-list reveal">
+          <div><span>01 /</span><h3>Attenuation is not accuracy.</h3><p>The reported values are functional response geometry, not the number of math answers corrected.</p></div>
+          <div><span>02 /</span><h3>Prompt conditions were not length-matched.</h3><p>The compared instruction templates added 14–15 tokens, changing positions alongside semantics.</p></div>
+          <div><span>03 /</span><h3>One historical edit is not generalization.</h3><p>No newly selected directions, multiple model families, or independent GPU reproduction are included here.</p></div>
+          <div><span>04 /</span><h3>A rotated control is not a circuit proof.</h3><p>One 90° direction comparison does not establish a unique causal mechanism.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-section section-pad" id="research" aria-labelledby="closing-title">
+      <div class="shell closing-layout reveal"><div><p class="eyebrow"><span class="section-numeral">06</span> Take the research further</p><h2 id="closing-title">Good questions<br>deserve <em>open evidence.</em></h2><p>Read the full eleven-page study. Recompute the tables. Challenge the interpretation. The next step is independent, length-matched replication.</p></div><div class="closing-links"><a href="https://doi.org/10.5281/zenodo.24280041" target="_blank" rel="noopener noreferrer"><span>01 / Read &amp; cite the study</span><strong>Zenodo preprint <span aria-hidden="true">↗</span></strong></a><a href="https://github.com/Harmain11/fluid-tensors" target="_blank" rel="noopener noreferrer"><span>02 / Inspect &amp; reproduce</span><strong>GitHub archive <span aria-hidden="true">↗</span></strong></a><a href="mailto:harmainmughal215@gmail.com?subject=Fluid%20Tensors%20research%20collaboration"><span>03 / Independent replication</span><strong>Contact Harmain <span aria-hidden="true">↗</span></strong></a></div></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-top"><a class="footer-brand" href="#top"><span class="brand-symbol" aria-hidden="true"><span>f</span><i></i><span>t</span></span><strong>Fluid Tensors</strong></a><p>Independent research into the behavior and evaluation of transformer weight interventions.</p><a href="#top" class="back-top">Back to top ↑</a></div><div class="shell footer-bottom"><span>© 2026 Harmain Dastgir. Independent Researcher.</span><span>Working preprint · Not peer reviewed</span><span><a href="https://doi.org/10.5281/zenodo.24280041">DOI: 10.5281/zenodo.24280041</a></span></div></footer>
+
+  <dialog class="figure-dialog" id="figureDialog" aria-labelledby="figureDialogTitle"><div class="figure-dialog-header"><span id="figureDialogTitle">Research figure</span><button type="button" data-dialog-close aria-label="Close enlarged figure">Close <span aria-hidden="true">×</span></button></div><img id="figureDialogImage" alt=""><p id="figureDialogCaption"></p></dialog>
+</body>
+</html>

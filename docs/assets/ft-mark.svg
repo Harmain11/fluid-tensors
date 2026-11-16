@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Fluid Tensors logo: f and t separated by a point">
+  <rect width="128" height="128" rx="32" fill="#3658d4"/>
+  <path d="M0 99q64 32 128-8v37H0z" fill="#2c43a9" opacity=".5"/>
+  <text x="32" y="85" fill="#f7f4ed" font-family="Georgia,serif" font-size="88" font-style="italic">f</text>
+  <circle cx="76" cy="72" r="5" fill="#e97759"/>
+  <text x="83" y="85" fill="#f7f4ed" font-family="Georgia,serif" font-size="74" font-style="italic">t</text>
+</svg>

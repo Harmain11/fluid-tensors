@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://harmain11.github.io/fluid-tensors/sitemap.xml

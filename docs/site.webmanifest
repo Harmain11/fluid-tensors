@@ -1,0 +1,13 @@
+{
+  "name": "Fluid Tensors — Independent ML Research",
+  "short_name": "Fluid Tensors",
+  "description": "Open research into transformer weight editing, prompt wording, and archived functional response.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f7f4ed",
+  "theme_color": "#3658d4",
+  "icons": [
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "assets/ft-mark.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

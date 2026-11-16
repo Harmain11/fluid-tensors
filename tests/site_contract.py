@@ -1,0 +1,76 @@
+"""Static deployment contracts for the free GitHub Pages research site."""
+
+from html.parser import HTMLParser
+from pathlib import Path
+import unittest
+
+
+DOCS = Path(__file__).resolve().parents[1] / "docs"
+
+
+class Elements(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.nodes = []
+
+    def handle_starttag(self, tag, attrs):
+        self.nodes.append((tag, dict(attrs)))
+
+
+def elements(path):
+    collector = Elements()
+    collector.feed(path.read_text(encoding="utf-8"))
+    return collector.nodes
+
+
+def by_attr(nodes, tag, key):
+    return [attrs for node_tag, attrs in nodes if node_tag == tag and key in attrs]
+
+
+class SiteContractTests(unittest.TestCase):
+    def test_home_explains_data_with_switchable_conditions_and_non_js_fallback(self):
+        nodes = elements(DOCS / "index.html")
+        sections = {attrs.get("id") for tag, attrs in nodes if tag == "section"}
+        self.assertTrue({"overview", "explore", "evidence", "limitations"}.issubset(sections))
+        ids = {attrs["data-wording"] for attrs in by_attr(nodes, "button", "data-wording")}
+        self.assertEqual(ids, {"original", "reworded", "formal", "terse"})
+        self.assertIn("dataset-fallback", {attrs.get("id") for attrs in by_attr(nodes, "table", "id")})
+        self.assertIn("study-data.mjs", (DOCS / "index.html").read_text(encoding="utf-8"))
+
+    def test_home_gallery_preserves_all_six_figure_outputs(self):
+        nodes = elements(DOCS / "index.html")
+        image_names = {Path(attrs.get("src", "")).name for attrs in by_attr(nodes, "img", "src")}
+        expected = {
+            "figure01_wording_mean_with_ci.png",
+            "figure02_direction_control.png",
+            "figure03_question_level_paired_effects.png",
+            "figure04_factorial_response_heatmaps.png",
+            "figureS1_bootstrap_distribution.png",
+            "figureS2_prompt_token_diagnostics.png",
+        }
+        self.assertTrue(expected.issubset(image_names), expected - image_names)
+
+    def test_article_deep_dive_navigation_and_figure_dialog(self):
+        article = DOCS / "papers" / "one-frozen-edit.html"
+        html = article.read_text(encoding="utf-8")
+        nodes = elements(article)
+        self.assertIn('class="article-mini-toc"', html)
+        ids = {attrs.get("id") for _, attrs in nodes}
+        self.assertTrue({"methods", "figures", "limitations", "replication"}.issubset(ids))
+        self.assertEqual(len(by_attr(nodes, "button", "data-figure-open")), 6)
+        self.assertEqual(len(by_attr(nodes, "dialog", "id")), 1)
+        self.assertIn('src="../site.js"', html)
+        self.assertIn("10.5281/zenodo.24280041", html)
+        self.assertNotIn("REPLACE_", html)
+
+    def test_article_retains_six_captioned_figures_and_boundaries(self):
+        article = DOCS / "papers" / "one-frozen-edit.html"
+        nodes = elements(article)
+        self.assertEqual(len([tag for tag, _ in nodes if tag == "figcaption"]), 6)
+        html = article.read_text(encoding="utf-8")
+        for caveat in ["32 question", "reasoning breakthrough", "no length- and position-matched", "not independently GPU-replayed"]:
+            self.assertIn(caveat.lower(), html.lower())
+
+
+if __name__ == "__main__":
+    unittest.main()

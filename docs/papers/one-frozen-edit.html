@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Why one frozen transformer weight edit changed its measured functional attenuation response when the prompt wording changed, and why this does not establish reasoning gains.">
+  <title>One Frozen Edit, Four Ways to Ask — Full Research Article | Fluid Tensors</title>
+  <meta name="author" content="Harmain Dastgir">
+  <meta name="theme-color" content="#172632">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://harmain11.github.io/fluid-tensors/papers/one-frozen-edit.html">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="../assets/ft-mark.svg">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="One Frozen Edit, Four Ways to Ask — Scientific Research Article">
+  <meta property="og:description" content="A fixed historical edit changes attenuation contrast with prompt wording. Full methods, six archived-result plots, reproducibility code and explicit limitations.">
+  <meta property="og:url" content="https://harmain11.github.io/fluid-tensors/papers/one-frozen-edit.html">
+  <meta property="og:image" content="https://harmain11.github.io/fluid-tensors/assets/social-cover.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:image:alt" content="Fluid Tensors paper: One frozen edit, four ways to ask; archived attenuation contrasts shown for four wording conditions.">
+  <meta property="article:published_time" content="2026-11-16">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="One Frozen Edit, Four Ways to Ask | Fluid Tensors">
+  <meta name="twitter:description" content="11-page preprint, six figures, 1,024 recorded cells, and reproducibility scripts. Functional attenuation, not answer accuracy.">
+  <meta name="twitter:image" content="https://harmain11.github.io/fluid-tensors/assets/social-cover.png">
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"One Frozen Edit, Four Ways to Ask: Prompt-Conditioned Functional Effects in a Transformer","name":"One Frozen Edit, Four Ways to Ask: Prompt-Conditioned Functional Effects in a Transformer","description":"An archival reanalysis of prompt-conditioned attenuation contrasts from one historical Qwen2.5-1.5B weight-editing setting, with 32 paired questions, six figures, and explicit causal limitations.","url":"https://harmain11.github.io/fluid-tensors/papers/one-frozen-edit.html","identifier":"https://doi.org/10.5281/zenodo.24280041","sameAs":"https://zenodo.org/records/24280041","datePublished":"2026-11-16","inLanguage":"en","isAccessibleForFree":true,"author":{"@type":"Person","name":"Harmain Dastgir","affiliation":{"@type":"Organization","name":"Independent Researcher"}},"publisher":{"@type":"Organization","name":"Zenodo"},"creativeWorkStatus":"Working preprint; not peer reviewed","license":"https://creativecommons.org/licenses/by/4.0/","keywords":["transformer model editing","prompt sensitivity","weight-space interventions","attenuation","reproducible research"]}
+  </script>
+  <link rel="stylesheet" href="../style.css">
+  <script type="module" src="../site.js"></script>
+</head>
+<body class="article-page">
+  <a class="skip-link" href="#main">Skip to research</a>
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+  <header class="site-header"><div class="shell nav-shell"><a class="brand" href="../index.html" aria-label="Fluid Tensors — home"><span class="brand-symbol" aria-hidden="true"><span>f</span><i></i><span>t</span></span><span class="brand-name">Fluid Tensors<small>independent research</small></span></a><nav class="site-nav" id="primaryNav" aria-label="Primary navigation"><a href="../index.html">Home</a><a href="#methods">Methods</a><a href="#figures">Figures</a><a href="#limitations">Limitations</a><a aria-current="page" href="one-frozen-edit.html">Research article</a></nav><a class="nav-link-pill" href="https://doi.org/10.5281/zenodo.24280041" target="_blank" rel="noopener noreferrer">Cite the study <span aria-hidden="true">↗</span></a><button class="menu-toggle" type="button" aria-controls="primaryNav" aria-expanded="false" aria-label="Open navigation"><span></span><span></span></button></div></header>
+  <main id="main">
+    <section class="article-hero">
+      <div class="article-container">
+        <p class="eyebrow">01 / RESEARCH STUDY &nbsp;·&nbsp; PROMPT-CONDITIONED MODEL EDITING</p>
+        <h1>The weight edit stayed frozen. <em>The measured effect didn't.</em></h1>
+        <p class="article-dek">A strong response under one wording became near-zero or negative after paraphrase. Four main research figures and two diagnostic plots unpack 1,024 archived measurements—and the limits of what they can tell us.</p>
+        <div class="article-author"><span>Harmain Dastgir</span><span>Independent Researcher</span><span>16 November 2026</span></div>
+        <div class="article-cta"><a class="button button-primary" href="https://doi.org/10.5281/zenodo.24280041">Read &amp; cite the PDF ↗</a><a class="button button-outline" href="https://github.com/Harmain11/fluid-tensors">Code + raw table ↗</a></div>
+        <p class="publication-note">Working preprint • Not peer reviewed • Numerical-table replay, not independent model inference replication</p>
+        <div class="article-header-rule"></div>
+      </div>
+    </section>
+    <article class="article-container article-body">
+      <div class="lead-callout"><span>THE FINDING IN ONE SENTENCE</span><p>The same historical transformer edit had a <strong>+0.206</strong> functional contrast under original wording, but <strong>−0.021</strong> after a rewrite—and the contrast is measured on <em>attenuation</em>, not answer correctness.</p></div>
+      <nav class="article-mini-toc" aria-label="In this research study"><span>ON THIS PAGE / READING ROUTE</span><a href="#context">Context ↗</a><a href="#methods">Methods ↗</a><a href="#figures">Six figures ↗</a><a href="#limitations">Limitations ↗</a><a href="#replication">Reproduction ↗</a></nav>
+
+      <h2 id="context">Why this question matters</h2>
+      <p>Weight edits are sometimes described as if a small, localized change gives a model a new stable behavior. But the same fixed parameters process very different token sequences when the prompt is rewritten. If an edit seems to work under one phrasing, how much of the effect is tied to the prompt itself?</p>
+      <p>My wider Fluid Tensors experiments explored localized edits, activation pathways, and later repair strategies. Many of those broader repair attempts did not establish reliable task-level benefit. For this first public paper, I isolated a narrower result that can be checked numerically.</p>
+
+      <h2>What was actually measured?</h2>
+      <p>We analyzed a frozen, archived factorial matrix from one Qwen2.5-1.5B model/edit setting. Every cell records an <strong>attenuation</strong> response associated with a historical edit condition. The principal comparison is the response under a combined math-and-format instruction minus the response under a generic instruction, holding the question, wording and edit direction fixed.</p>
+      <div class="stat-grid"><div><strong>32</strong><span>Question units</span></div><div><strong>2</strong><span>Directions</span></div><div><strong>4</strong><span>Wording variants</span></div><div><strong>1,024</strong><span>Archived cells</span></div></div>
+      <p>The directions are a historical <code>signed</code> vector and one <code>rotated_90</code> control. Wording variants are original, reworded, formal and terse; each was tested across generic, math-only, format-only and math-plus-format templates. These are <strong>32 paired question units</strong>, not 1,024 independent sampled questions.</p>
+
+      <h2 id="methods">How did we audit the table?</h2>
+      <p>Each record is keyed by question ID, edit direction, wording and instruction template. The release code checks the <strong>SHA-256 checksum</strong> of the frozen source; rejects duplicate, absent and non-finite cells; verifies all 32 × 2 × 4 × 4 combinations; and confirms prompt-token counts for matching conditions across directions. Only after those checks does it recompute contrasts and figures.</p>
+      <p>Let <code>A(q,d,v,t)</code> be the archived attenuation for question <code>q</code>, direction <code>d</code>, wording <code>v</code>, and template <code>t</code>. We compute <code>Δ(q,d,v) = A(q,d,v,math_format) − A(q,d,v,generic)</code>. The main estimate is the average across 32 questions of <code>Δ(q,signed,original) − Δ(q,signed,reworded)</code>. This is a <strong>difference of two within-question, within-direction contrasts</strong>; it is not an answer score or a probability of successful repair.</p>
+
+      <h2 id="figures">Figure 1 — The original wording stands apart</h2>
+      <p>For the signed historical direction, the mean math-plus-format versus generic attenuation contrast is <strong>+0.205542</strong> under the original wording. The same comparison is <strong>−0.020673</strong> after rewording, <strong>−0.045819</strong> in the formal variant and <strong>−0.002337</strong> in the terse variant. These are averages over the same 32 question IDs, not four unrelated question sets.</p>
+      <figure class="article-figure"><button class="figure-open" type="button" data-figure-open aria-label="Enlarge Figure 1"><img src="../assets/figure01_wording_mean_with_ci.png" alt="Four wording-condition mean attenuation contrasts for the signed edit, with conditional question-bootstrap 95-percent intervals. Original +0.206, reworded -0.021, formal -0.046, terse -0.002." loading="lazy"></button><figcaption><strong>Figure 1.</strong> Signed-edit means of <code>math_format − generic</code> attenuation, with descriptive 95% question-bootstrap intervals. The error bars describe variation from question resampling in this fixed archival study; they are <strong>not accuracy intervals</strong> and do not account for edit selection.</figcaption></figure>
+      <p>The visual contrast is notable because the underlying historical edit is held fixed in the recorded panel. What changes across the comparison is the input phrasing and its associated instruction-template presentation. Importantly, prompt semantics, total length and token positions are <strong>not separately randomized</strong>.</p>
+
+      <h2>Figure 2 — What happens to a rotated control?</h2>
+      <p>We repeated the same contrast for a direction rotated 90° from the signed vector in the historical setup. Under the original wording, its mean is <strong>−0.023924</strong> rather than the signed direction's <strong>+0.205542</strong>. Across the other three wording families, both directions exhibit varying, generally smaller contrasts. This is useful comparative evidence, but one rotated direction is not a formal random-control distribution.</p>
+      <figure class="article-figure"><button class="figure-open" type="button" data-figure-open aria-label="Enlarge Figure 2"><img src="../assets/figure02_direction_control.png" alt="Historical signed and 90-degree rotated control edit direction mean attenuation contrasts across the four prompt wordings." loading="lazy"></button><figcaption><strong>Figure 2.</strong> Signed and 90°-rotated direction contrasts across wordings. The visual tests <em>direction specificity in the archived panel</em>; it does not prove a unique pathway, randomization validity or independently learned transfer.</figcaption></figure>
+
+      <h2>Figure 3 — All 32 question-level differences</h2>
+      <p>For each question, we subtracted the signed/reworded functional contrast from the signed/original contrast. The mean paired difference is <strong>+0.226216</strong>, with median <strong>+0.241814</strong>. All <strong>32 of 32</strong> individual differences were positive in this frozen question panel, but the magnitudes span <strong>+0.008832 to +0.712422</strong>. That spread is worth showing: it prevents an aggregate bar from implying identical behavior for every question.</p>
+      <figure class="article-figure"><button class="figure-open" type="button" data-figure-open aria-label="Enlarge Figure 3"><img src="../assets/figure03_question_level_paired_effects.png" alt="Every one of 32 sorted question-level original-minus-reworded paired attenuation contrasts is positive, but sizes range from 0.009 to 0.712." loading="lazy"></button><figcaption><strong>Figure 3.</strong> Individual original-minus-reworded paired signed-edit contrasts. <code>Q01–Q32</code> are sorted effect ranks for legibility, <strong>not source question IDs</strong>; the mapping to the archived IDs is preserved in the downloadable CSV.</figcaption></figure>
+      <p>A 20,000-draw nonparametric bootstrap, resampling the <strong>32 questions</strong> with replacement, produces the percentile 95% interval <strong>[+0.184256, +0.274149]</strong> for this paired mean (seed: <code>20261116</code>). This describes conditional question-sampling variability. It does not cover uncertainty from how the edit, the prompt variants or the questions were historically selected.</p>
+
+      <h2>Figure 4 — Look at the whole response matrix</h2>
+      <p>The 1,024 cells are not just four summary bars. We can inspect each instruction template inside each wording family for both directions. These two heatmaps average the <strong>raw attenuation</strong> across 32 questions for every wording-by-template cell. They make the factorial design visible, including patterns that a single math-plus-format versus generic contrast might hide.</p>
+      <figure class="article-figure"><button class="figure-open" type="button" data-figure-open aria-label="Enlarge Figure 4"><img src="../assets/figure04_factorial_response_heatmaps.png" alt="Side-by-side four by four heatmaps of raw archived mean attenuation for signed versus 90-degree rotated control directions, by wording and instruction template." loading="lazy"></button><figcaption><strong>Figure 4.</strong> Full two-direction response map. Unlike Figures 1–3, the heatmap cells are <strong>raw mean attenuation, not subtracted contrasts</strong>. Both panels share one color scale; each cell averages 32 recorded question responses.</figcaption></figure>
+      <p>The heatmaps help identify where the archival interaction resides, but they do not tell us whether an effect is semantic, a length artifact, a token-position interaction or a specific computational circuit. Resolving those explanations would require prospectively designed controls.</p>
+
+      <h2 id="limitations">Why this is <em>not</em> a reasoning breakthrough</h2>
+      <div class="caution-box"><strong>Not measured:</strong> whether the answer to a math question became correct. <strong>Not demonstrated:</strong> general-purpose repair, a unique internal mechanism, independent edit transfer, or a phase transition.</div>
+      <ul>
+        <li><strong>Prompt-length confound.</strong> In the original-wording panel, generic prompts averaged 100.25 tokens, versus 114.25 for math-plus-format. The template changes add 14 or 15 tokens across wording families. Semantics, length and token positions changed together.</li>
+        <li><strong>Historical edit selection.</strong> The intervention was selected in earlier work. Its full independent provenance has not been reconstructed in the release package.</li>
+        <li><strong>One model/edit context.</strong> The reanalysis covers one Qwen2.5-1.5B setup, not fresh edits on multiple model families.</li>
+        <li><strong>Table replay only.</strong> The Python script recomputes statistics from an archived CSV; it does not rerun the original inference or reproduce the model checkpoints.</li>
+        <li><strong>Negative nearby evidence.</strong> Other Fluid Tensors evaluations did not show reliable math-correctness improvement or broad autonomous repair. Those results cannot be replaced by a larger attenuation contrast.</li>
+      </ul>
+
+      <h2>Supplementary plots — uncertainty and the unresolved confound</h2>
+      <p>Two additional graphics show diagnostics that are easy to overlook when only the main result is shown. They are included in the full paper appendix and regenerated by the same public plotting script.</p>
+      <figure class="article-figure"><button class="figure-open" type="button" data-figure-open aria-label="Enlarge Supplementary Figure S1"><img src="../assets/figureS1_bootstrap_distribution.png" alt="Bootstrap histogram of 20,000 resampled 32-question paired-effect means, with observed mean 0.226 and percentile 95-percent interval 0.184 to 0.274." loading="lazy"></button><figcaption><strong>Supplementary Figure S1.</strong> The distribution of 20,000 question-level bootstrap means. The observed mean and percentile limits are marked. This is not a new experiment and does not correct historical selection bias.</figcaption></figure>
+      <figure class="article-figure"><button class="figure-open" type="button" data-figure-open aria-label="Enlarge Supplementary Figure S2"><img src="../assets/figureS2_prompt_token_diagnostics.png" alt="Recorded mean prompt token counts across four wordings and four templates, plus a chart of the extra 14 to 15 tokens added by math-and-format instruction compared with generic." loading="lazy"></button><figcaption><strong>Supplementary Figure S2.</strong> Mean archived prompt lengths and the <strong>14–15 additional tokens</strong> in math-plus-format versus generic inputs. This is direct evidence of a confounding change in the experimental conditions; there was no length- and position-matched intervention.</figcaption></figure>
+
+      <h2>How should the figures be read together?</h2>
+      <p>Figure 1 identifies a wording-conditioned mean attenuation contrast; Figure 2 asks whether that contrast looks similar for a rotated control; Figure 3 shows the distribution of paired observations rather than hiding behind a single mean; and Figure 4 displays the broader factorial measurements. Figure S1 checks the resampling arithmetic, while Figure S2 makes clear why the recorded contrast is <strong>not evidence that wording semantics alone caused the difference</strong>.</p>
+      <p>Even the consistent 32/32 positive sign pattern should be interpreted only within the <em>historically chosen</em> edit and archived question set. A true independent test would pre-register the selection process and evaluate held-out question types with several separately constructed directions and matched-length placebos.</p>
+
+      <h2>What would convince me next?</h2>
+      <p>A prospective test should freeze the edit before selecting evaluation prompts, use multiple independently trained directions and model families, add <strong>token-length- and position-matched semantic placebos</strong>, and score both the internal functional response and blinded final-answer correctness. Causal claims would need direct activation mediation and stronger random/rotated controls.</p>
+      <p>The practical research lesson is modest but useful: <strong>if a weight edit's claimed benefit depends on one prompt wording, evaluation should expose that dependence before calling the edit a repair.</strong></p>
+
+      <section class="reproduce-panel" id="replication"><p class="eyebrow dark-eyebrow">CHECK THE NUMBERS AND PLOTS</p><h2>Recompute every displayed figure.</h2><p>The project includes the archived 1,024-cell response table, checksum-validation scripts and the six figure recipes. This requires NumPy and Matplotlib—not a GPU, model weights, or an API key. The script writes the PNGs, a JSON audit and a per-question CSV.</p><pre><code>python -m pip install -r requirements.txt
+python reproduce_deposit.py
+python make_study_figures.py</code></pre><div class="action-row"><a class="button button-dark" href="https://github.com/Harmain11/fluid-tensors">Browse the GitHub repository ↗</a><a class="text-link" href="https://doi.org/10.5281/zenodo.24280041">Zenodo record ↗</a></div><p class="fine-print">Numerical replay is distinct from reproducing the original model-side intervention; the original inference experiment was not independently GPU-replayed in this package.</p></section>
+
+      <h2>Related work and transparency</h2>
+      <p>Prior work on editing and prompt-robustness includes <a href="https://rome.baulab.info/">Meng et al. (2022)</a>, <a href="https://openreview.net/pdf?id=0DcZxeWfOPt">Mitchell et al. (2022)</a>, <a href="https://proceedings.iclr.cc/paper_files/paper/2024/hash/6c0e99d736da621403018ca7b32b1a4d-Abstract-Conference.html">Sclar et al. (2024)</a>, <a href="https://doi.org/10.18653/v1/2024.emnlp-main.906">Ma et al. (2024)</a>, and <a href="https://aclanthology.org/2025.acl-long.745/">Yang et al. (2025)</a>. This paper does not claim the first discovery of prompt sensitivity. Its contribution is a bounded factorial record and transparent source-table reanalysis.</p>
+      <p><strong>Funding:</strong> self-funded by the author; no external research funding reported. <strong>AI assistance:</strong> used for writing, numerical checking, figures and document production; the author is responsible for research accuracy. <strong>Competing interests:</strong> the author declares no competing interests. The original manuscript and numerical tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> and the Python reanalysis script under the <a href="https://opensource.org/license/mit">MIT License</a>. The author welcomes critical replication and future research collaboration at <a href="mailto:harmainmughal215@gmail.com">harmainmughal215@gmail.com</a>.</p>
+      <div class="end-rule"><a class="text-link" href="../index.html">← All research notes</a></div>
+    </article>
+  </main>
+  <footer class="site-footer"><div class="shell footer-top"><a class="footer-brand" href="../index.html"><span class="brand-symbol" aria-hidden="true"><span>f</span><i></i><span>t</span></span><strong>Fluid Tensors</strong></a><p>Independent research into transformer weight interventions and their evaluation.</p><a href="#main" class="back-top">Back to top ↑</a></div><div class="shell footer-bottom"><span>© 2026 Harmain Dastgir · Independent Researcher</span><span>Working preprint · Not peer reviewed</span><a href="https://doi.org/10.5281/zenodo.24280041">DOI: 10.5281/zenodo.24280041</a></div></footer>
+  <dialog class="figure-dialog" id="figureDialog" aria-labelledby="figureDialogTitle"><div class="figure-dialog-header"><span id="figureDialogTitle">Research figure</span><button type="button" data-dialog-close aria-label="Close enlarged figure">Close <span aria-hidden="true">×</span></button></div><img id="figureDialogImage" alt=""><p id="figureDialogCaption"></p></dialog>
+</body>
+</html>
+

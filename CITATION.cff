@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use the archived results, please cite the open Zenodo research preprint."
+title: "Fluid Tensors: Archived Prompt-Conditioned Transformer Weight-Editing Study"
+type: software
+authors:
+  - family-names: Dastgir
+    given-names: Harmain
+    affiliation: Independent Researcher
+keywords:
+  - transformer model editing
+  - prompt sensitivity
+  - weight-space interventions
+  - reproducibility
+repository-code: "https://github.com/Harmain11/fluid-tensors"
+url: "https://harmain11.github.io/fluid-tensors/"
+license: MIT
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Dastgir
+      given-names: Harmain
+      affiliation: Independent Researcher
+  title: "One Frozen Edit, Four Ways to Ask: Prompt-Conditioned Functional Effects in a Transformer"
+  year: 2026
+  doi: "10.5281/zenodo.24280041"
+  url: "https://doi.org/10.5281/zenodo.24280041"
+
