@@ -1,7 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Fluid Tensors logo: f and t separated by a point">
-  <rect width="128" height="128" rx="32" fill="#3658d4"/>
-  <path d="M0 99q64 32 128-8v37H0z" fill="#2c43a9" opacity=".5"/>
-  <text x="32" y="85" fill="#f7f4ed" font-family="Georgia,serif" font-size="88" font-style="italic">f</text>
-  <circle cx="76" cy="72" r="5" fill="#e97759"/>
-  <text x="83" y="85" fill="#f7f4ed" font-family="Georgia,serif" font-size="74" font-style="italic">t</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Fluid Tensors — connected tensor lattice mark">
+  <rect width="128" height="128" rx="29" fill="#173f35"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M38 38H90V90H38Z" stroke="#7db69b" stroke-width="6"/>
+    <path d="M38 90L90 38" stroke="#e5f4e9" stroke-width="6"/>
+  </g>
+  <circle cx="38" cy="38" r="10" fill="#e9f7ee"/>
+  <circle cx="90" cy="38" r="10" fill="#d4ebd9"/>
+  <circle cx="38" cy="90" r="10" fill="#9fceb2"/>
+  <circle cx="90" cy="90" r="10" fill="#e9f7ee"/>
 </svg>

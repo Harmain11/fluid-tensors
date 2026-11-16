@@ -4,8 +4,8 @@
   "description": "Open research into transformer weight editing, prompt wording, and archived functional response.",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#f7f4ed",
-  "theme_color": "#3658d4",
+  "background_color": "#f1f5ef",
+  "theme_color": "#173f35",
   "icons": [
     { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
     { "src": "assets/ft-mark.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }

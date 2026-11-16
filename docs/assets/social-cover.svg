@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-label="Fluid Tensors research: One frozen edit, four ways to ask. Archived attenuation contrasts across four wording conditions.">
+  <rect width="1280" height="640" fill="#f1f5ef"/>
+  <g stroke="#d9e6d9" stroke-width="1" fill="none" opacity=".75">
+    <path d="M0 530H715M0 550H715M0 570H715M0 590H715"/>
+    <path d="M42 500V640M82 500V640M122 500V640M162 500V640M202 500V640"/>
+  </g>
+  <g transform="translate(72 52) scale(.54)">
+    <rect width="128" height="128" rx="29" fill="#173f35"/>
+    <path d="M38 38H90V90H38Z" fill="none" stroke="#7db69b" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M38 90L90 38" fill="none" stroke="#e5f4e9" stroke-width="6"/>
+    <circle cx="38" cy="38" r="10" fill="#e9f7ee"/><circle cx="90" cy="38" r="10" fill="#d4ebd9"/>
+    <circle cx="38" cy="90" r="10" fill="#9fceb2"/><circle cx="90" cy="90" r="10" fill="#e9f7ee"/>
+  </g>
+  <text x="157" y="86" font-family="Arial,sans-serif" font-size="21" font-weight="700" letter-spacing="3" fill="#183f34">FLUID TENSORS</text>
+  <text x="157" y="113" font-family="Arial,sans-serif" font-size="13" letter-spacing="1.25" fill="#718979">INDEPENDENT RESEARCH   /   NOTE 01</text>
+  <path d="M72 155H1208" stroke="#cbdccc" stroke-width="2"/>
+
+  <text x="72" y="260" font-family="Georgia,'Times New Roman',serif" font-size="75" fill="#1e3e32">One frozen edit.</text>
+  <text x="72" y="344" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="75" fill="#397b60">Four ways to ask.</text>
+  <text x="75" y="417" font-family="Arial,sans-serif" font-size="21" fill="#526c5c">Prompt-conditioned functional effects in a transformer.</text>
+  <text x="75" y="453" font-family="Arial,sans-serif" font-size="17" fill="#718779">One selected historical edit setting · 32 questions · 1,024 recorded cells</text>
+
+  <rect x="801" y="192" width="407" height="296" rx="13" fill="#ffffff" stroke="#dbe8db" stroke-width="2"/>
+  <text x="826" y="221" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="1.3" fill="#729280">ARCHIVED SIGNAL   /   SIGNED EDIT</text>
+  <text x="826" y="255" font-family="Georgia,'Times New Roman',serif" font-size="25" fill="#254f3f">Δ attenuation by wording</text>
+  <g font-family="Arial,sans-serif" font-size="15" fill="#4a6656">
+    <text x="826" y="310">Original</text><text x="826" y="350">Reworded</text>
+    <text x="826" y="390">Formal</text><text x="826" y="430">Terse</text>
+  </g>
+  <g stroke="#e2ece3" stroke-width="2"><path d="M923 304H1126M923 344H1126M923 384H1126M923 424H1126"/></g>
+  <g stroke="#a5bdae" stroke-width="2"><path d="M1025 293v24M1025 333v24M1025 373v24M1025 413v24"/></g>
+  <rect x="1025" y="300" width="83" height="8" rx="3" fill="#4d9270"/>
+  <rect x="1017" y="340" width="8" height="8" rx="2" fill="#bd8874"/>
+  <rect x="1007" y="380" width="18" height="8" rx="2" fill="#bd8874"/>
+  <rect x="1023" y="420" width="2" height="8" fill="#bd8874"/>
+  <text x="826" y="468" font-family="Arial,sans-serif" font-size="12" fill="#8b9d90">Functional response metric · not answer accuracy</text>
+
+  <path d="M72 553H1208" stroke="#cbdccc" stroke-width="2"/>
+  <text x="72" y="594" font-family="Arial,sans-serif" font-size="15" letter-spacing=".5" fill="#617a69">HARMAIN DASTGIR   /   WORKING PREPRINT   /   2026</text>
+  <text x="1208" y="594" text-anchor="end" font-family="Arial,sans-serif" font-size="15" fill="#367655">DOI: 10.5281/zenodo.24280041</text>
+</svg>

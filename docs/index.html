@@ -37,7 +37,7 @@
   <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
   <header class="site-header">
     <div class="shell nav-shell">
-      <a class="brand" href="index.html">Fluid Tensors <span>Research notes</span></a>
+      <a class="brand" href="index.html"><img src="assets/ft-mark.svg" width="32" height="32" alt=""><span class="brand-wordmark">Fluid Tensors</span><span class="brand-qualifier">Research notes</span></a>
       <nav class="site-nav" id="primaryNav" aria-label="Main navigation">
         <a href="#overview" aria-current="page">Overview</a>
         <a href="#explore">Results</a>
@@ -51,11 +51,29 @@
 
   <main id="main">
     <section class="paper-hero" id="overview">
-      <div class="reading-width">
-        <p class="paper-category">Research note / Transformer model editing</p>
-        <h1>One Frozen Edit, Four Ways to Ask</h1>
-        <p class="paper-subtitle">Prompt-Conditioned Functional Effects in a Transformer</p>
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="paper-category">Fluid Tensors <span class="category-separator">/</span> Research note 01</p>
+          <h1>One frozen edit.<br><em>Four ways to ask.</em></h1>
+          <p class="paper-subtitle">Prompt-Conditioned Functional Effects in a Transformer</p>
+          <p class="hero-intro">An archived transformer intervention looked different when the same questions were phrased differently. We traced the numbers, the controls, and the limits of the result.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#explore">Explore the finding <span aria-hidden="true">↘</span></a><a class="hero-text-link" href="papers/one-frozen-edit.html">Read the research article <span aria-hidden="true">↗</span></a></div>
+        </div>
+
+        <figure class="hero-comparison" aria-label="Recorded signed-edit attenuation contrasts by original, reworded, formal, and terse question wording, not answer accuracy">
+          <div class="hero-figure-head"><span>Figure preview / archival data</span><span>CI V2.1</span></div>
+          <div class="hero-figure-title"><strong>A fixed edit, four responses</strong><span>Δ attenuation</span></div>
+          <div class="hero-plot-scale"><span>−0.25</span><span>0</span><span>+0.25</span></div>
+          <div class="hero-plot">
+            <div class="hero-plot-row"><span>Original</span><div class="hero-plot-track"><i class="hero-zero"></i><b class="hero-positive" style="width:41.10849%"></b></div><strong>+0.205542</strong></div>
+            <div class="hero-plot-row"><span>Reworded</span><div class="hero-plot-track"><i class="hero-zero"></i><b class="hero-negative" style="width:4.13466%"></b></div><strong>−0.020673</strong></div>
+            <div class="hero-plot-row"><span>Formal</span><div class="hero-plot-track"><i class="hero-zero"></i><b class="hero-negative" style="width:9.16377%"></b></div><strong>−0.045819</strong></div>
+            <div class="hero-plot-row"><span>Terse</span><div class="hero-plot-track"><i class="hero-zero"></i><b class="hero-negative" style="width:.46731%"></b></div><strong>−0.002337</strong></div>
+          </div>
+          <figcaption>Signed direction; mean math-plus-format minus generic attenuation, across 32 archived questions. <strong>Not answer accuracy.</strong></figcaption>
+        </figure>
       </div>
+      <div class="hero-bottom shell"><span>Qwen2.5-1.5B</span><span>32 paired question units</span><span>Research preprint · November 2026</span></div>
     </section>
 
     <div class="paper-meta reading-width">
