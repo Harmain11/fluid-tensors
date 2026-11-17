@@ -25,7 +25,8 @@
   <a href="https://github.com/Harmain11/fluid-tensors/fork">Fork</a> ·
   <a href="https://github.com/Harmain11/fluid-tensors/issues/new">Contribute</a> ·
   <a href="mailto:harmainmughal215@gmail.com?subject=Fluid%20Tensors%20research%20collaboration">Collaborate</a> ·
-  <a href="https://www.linkedin.com/in/harmain-mughal-7b1845379">LinkedIn</a>
+  <a href="https://www.linkedin.com/in/harmain-mughal-7b1845379">LinkedIn</a> ·
+  <a href="https://orcid.org/0009-0004-1090-545X">ORCID</a>
 </p>
 
 <sub>Harmain Dastgir · Independent Researcher · November 16, 2026 · Working preprint (not peer reviewed)</sub>
@@ -218,7 +219,8 @@ We invite outside researchers to [replay the 1,024-cell archive, independently r
 **Harmain Dastgir**  
 Independent Researcher  
 **Email:** harmainmughal215@gmail.com  
-**LinkedIn:** [Harmain Dastgir](https://www.linkedin.com/in/harmain-mughal-7b1845379)
+**LinkedIn:** [Harmain Dastgir](https://www.linkedin.com/in/harmain-mughal-7b1845379)  
+**ORCID:** [0009-0004-1090-545X](https://orcid.org/0009-0004-1090-545X)
 
 The study is self-funded, with no external grant reported and no competing interests declared. Independent replication, critical evaluation, methodological discussion, and future scientific collaboration are welcome.
 
