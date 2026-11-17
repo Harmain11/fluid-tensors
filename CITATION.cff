@@ -5,6 +5,7 @@ type: software
 authors:
   - family-names: Dastgir
     given-names: Harmain
+    orcid: "https://orcid.org/0009-0004-1090-545X"
     affiliation: Independent Researcher
 keywords:
   - transformer model editing
@@ -19,6 +20,7 @@ preferred-citation:
   authors:
     - family-names: Dastgir
       given-names: Harmain
+      orcid: "https://orcid.org/0009-0004-1090-545X"
       affiliation: Independent Researcher
   title: "One Frozen Edit, Four Ways to Ask: Prompt-Conditioned Functional Effects in a Transformer"
   year: 2026
