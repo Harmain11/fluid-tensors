@@ -55,6 +55,6 @@ This is the **repository** card. The website homepage and research article separ
 >
 > Interactive research site: https://harmain11.github.io/fluid-tensors/
 >
-> Full preprint: https://doi.org/10.5281/zenodo.24280041
+> Full preprint (latest version): https://doi.org/10.5281/zenodo.24284827
 >
 > I welcome independent reproduction, critique and collaboration.
