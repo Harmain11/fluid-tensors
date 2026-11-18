@@ -1,7 +1,8 @@
 cff-version: 1.2.0
-message: "If you use the archived results, please cite the open Zenodo research preprint."
+message: "If you use Paper 1 results, cite Zenodo Version 3 with its within-model GPU confirmation."
 title: "Fluid Tensors: Archived Prompt-Conditioned Transformer Weight-Editing Study"
 type: software
+version: "3"
 authors:
   - family-names: Dastgir
     given-names: Harmain
@@ -24,5 +25,5 @@ preferred-citation:
       affiliation: Independent Researcher
   title: "One Frozen Edit, Four Ways to Ask: Prompt-Conditioned Functional Effects in a Transformer"
   year: 2026
-  doi: "10.5281/zenodo.24284827"
-  url: "https://doi.org/10.5281/zenodo.24284827"
+  doi: "10.5281/zenodo.24338059"
+  url: "https://doi.org/10.5281/zenodo.24338059"

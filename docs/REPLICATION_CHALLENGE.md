@@ -28,4 +28,4 @@ Freeze a new task set and independent edit-selection rule before evaluation. Com
 
 Use the [replication report template](https://github.com/Harmain11/fluid-tensors/issues/new/choose), [GitHub Discussions](https://github.com/Harmain11/fluid-tensors/discussions), or a pull request containing a reproducible report. Specify A/B/C and link raw data and scripts when licensing permits. We explicitly welcome criticism and unsuccessful replications.
 
-Sources: [Zenodo Version 2 and full supplement](https://doi.org/10.5281/zenodo.24284827) · [GitHub v1.1.0 provenance release](https://github.com/Harmain11/fluid-tensors/releases/tag/v1.1.0) · [paper](https://harmain11.github.io/fluid-tensors/papers/one-frozen-edit.html). Working preprint, not peer reviewed.
+Sources: [Zenodo Version 3 / within-model GPU confirmation](https://doi.org/10.5281/zenodo.24338059) · [Zenodo Version 2 and original provenance](https://doi.org/10.5281/zenodo.24284827) · [GitHub v1.1.0 provenance release](https://github.com/Harmain11/fluid-tensors/releases/tag/v1.1.0) · [paper](https://harmain11.github.io/fluid-tensors/papers/one-frozen-edit.html). Working preprint, not peer reviewed.

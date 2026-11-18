@@ -50,23 +50,25 @@ class SiteContractTests(unittest.TestCase):
         }
         self.assertTrue(expected.issubset(image_names), expected - image_names)
 
-    def test_article_deep_dive_navigation_and_figure_dialog(self):
+    def test_article_deep_dive_navigation_and_eight_figure_dialogs(self):
         article = DOCS / "papers" / "one-frozen-edit.html"
         html = article.read_text(encoding="utf-8")
         nodes = elements(article)
         self.assertIn('class="article-mini-toc"', html)
         ids = {attrs.get("id") for _, attrs in nodes}
         self.assertTrue({"methods", "figures", "limitations", "replication"}.issubset(ids))
-        self.assertEqual(len(by_attr(nodes, "button", "data-figure-open")), 6)
+        self.assertEqual(len(by_attr(nodes, "button", "data-figure-open")), 8)
         self.assertEqual(len(by_attr(nodes, "dialog", "id")), 1)
         self.assertIn('src="../site.js"', html)
         self.assertIn("10.5281/zenodo.24280041", html)
         self.assertNotIn("REPLACE_", html)
 
-    def test_article_retains_six_captioned_figures_and_boundaries(self):
+    def test_article_preserves_six_historical_and_two_confirmation_figures_and_boundaries(self):
         article = DOCS / "papers" / "one-frozen-edit.html"
         nodes = elements(article)
-        self.assertEqual(len([tag for tag, _ in nodes if tag == "figcaption"]), 6)
+        self.assertEqual(len([tag for tag, _ in nodes if tag == "figcaption"]), 8)
+        image_names = {Path(attrs.get("src", "")).name for attrs in by_attr(nodes, "img", "src")}
+        self.assertTrue({"p1_confirmation_condition_contrasts.png", "p1_confirmation_matched_vs_raw.png"}.issubset(image_names))
         html = article.read_text(encoding="utf-8")
         for caveat in ["32 question", "reasoning breakthrough", "no length- and position-matched", "not independently GPU-replayed"]:
             self.assertIn(caveat.lower(), html.lower())

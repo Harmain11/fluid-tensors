@@ -9,7 +9,7 @@ From the old repository's **Settings → General**, rename it to `fluid-tensors`
 Then select the edit/gear icon beside the right-hand **About** section and enter:
 
 - **Repository name:** `fluid-tensors`
-- **Description:** `Open study of prompt-conditioned transformer weight edits: 1,024 archived responses, six figures, reproducible Python and Zenodo DOI.`
+- **Description:** `Open study of prompt-conditioned transformer weight edits: 1,024 archived responses plus 64-question GPU confirmation, eight figures, reproducible Python and Zenodo DOI.`
 - **Website URL:** `https://harmain11.github.io/fluid-tensors/`
 - **Topics:** `machine-learning`, `transformers`, `llm`, `model-editing`, `prompt-sensitivity`, `prompt-robustness`, `interpretability`, `weight-space`, `reproducible-research`, `open-science`, `qwen2`, `research-paper`
 
@@ -55,6 +55,6 @@ This is the **repository** card. The website homepage and research article separ
 >
 > Interactive research site: https://harmain11.github.io/fluid-tensors/
 >
-> Full preprint (latest version): https://doi.org/10.5281/zenodo.24284827
+> Full preprint (latest version): https://doi.org/10.5281/zenodo.24338059
 >
 > I welcome independent reproduction, critique and collaboration.

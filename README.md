@@ -10,7 +10,7 @@
   <a href="https://www.python.org/"><img alt="Python 3.9+" src="https://img.shields.io/badge/Python-3.9%2B-3776AB?style=flat-square&logo=python&logoColor=white"></a>
   <a href="https://numpy.org/"><img alt="NumPy" src="https://img.shields.io/badge/NumPy-Scientific%20Computing-013243?style=flat-square&logo=numpy&logoColor=white"></a>
   <a href="https://matplotlib.org/"><img alt="Matplotlib" src="https://img.shields.io/badge/Matplotlib-Visualization-11557C?style=flat-square"></a>
-  <a href="https://doi.org/10.5281/zenodo.24284827"><img alt="Zenodo DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.24284827.svg"></a>
+  <a href="https://doi.org/10.5281/zenodo.24338059"><img alt="Zenodo DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.24338059.svg"></a>
   <a href="LICENSE-MIT"><img alt="MIT License" src="https://img.shields.io/badge/Code-MIT-4C8B6E?style=flat-square"></a>
   <a href="LICENSES.md"><img alt="Creative Commons BY 4.0" src="https://img.shields.io/badge/Paper%20%26%20Data-CC%20BY%204.0-4C8B6E?style=flat-square"></a>
   <a href="https://github.com/Harmain11/fluid-tensors/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Harmain11/fluid-tensors?style=flat-square&logo=github&label=Stars"></a>
@@ -19,7 +19,7 @@
 <p>
   <a href="https://harmain11.github.io/fluid-tensors/">Interactive Study</a> ·
   <a href="https://harmain11.github.io/fluid-tensors/papers/one-frozen-edit.html">Research Article</a> ·
-  <a href="https://doi.org/10.5281/zenodo.24284827">Preprint / DOI</a> ·
+  <a href="https://doi.org/10.5281/zenodo.24338059">Preprint / DOI</a> ·
   <a href="docs/REPLICATION_CHALLENGE.md">Replication challenge</a> ·
   <a href="CONTRIBUTING.md">Contributing guide</a> ·
   <a href="https://github.com/Harmain11/fluid-tensors/fork">Fork</a> ·
@@ -40,7 +40,7 @@
 
 The [Paper 1 confirmation update](paper1-confirmation-2026-11-18/README.md) adds a freshly completed **64-question within-model GPU confirmation** on the pinned Qwen2.5-1.5B-Instruct checkpoint. The specific prompt-conditioned final-token logit response contrast persisted under recorded input-token-count matching: **+0.193491** with a question-bootstrap 95% interval **[+0.166896, +0.219002]**; **62/64** fresh questions were positive. The norm-matched orthogonal control averaged **+0.004060**. The original 32-question contrast was also replayed exactly (128/128 cells), with no numeric-gate failures across all 1,152 new-run measurements.
 
-This is **not a math-answer accuracy result**, proof of general model repair, or replication on a different model. The new GSM8K train questions were disjoint from the frozen historical registry but not necessarily from pretraining. The explicit newline-token matching is not semantically neutral. The earlier archived results, citations and Zenodo DOI remain preserved; any new version-specific Zenodo DOI will be linked after deposit.
+This is **not a math-answer accuracy result**, proof of general model repair, or replication on a different model. The new GSM8K train questions were disjoint from the frozen historical registry but not necessarily from pretraining. The explicit newline-token matching is not semantically neutral. The earlier archived versions and DOI history are preserved. **The November 18 Version 3 is now published**: [DOI 10.5281/zenodo.24338059](https://doi.org/10.5281/zenodo.24338059).
 
 - [Complete v1.2 reading copy (PDF)](paper1-confirmation-2026-11-18/One_Frozen_Edit_Paper_1_v1_2_Research_Update.pdf)
 - [Supplement and GPU evidence archive](paper1-confirmation-2026-11-18/README.md)
@@ -76,7 +76,7 @@ The archive contains **1,024 complete measurements** from 32 question identifier
 | Reported metric | Functional **attenuation** response |
 | Analysis stack | Python, NumPy, Matplotlib |
 | Research website | HTML5, CSS3, vanilla JavaScript, GitHub Pages |
-| Publication | [Open Zenodo preprint](https://doi.org/10.5281/zenodo.24284827) |
+| Publication | [Open Zenodo preprint](https://doi.org/10.5281/zenodo.24338059) |
 
 > **Scientific scope:** The measurements describe functional attenuation, **not mathematical answer accuracy**. This is an archival reanalysis, not an independent GPU reproduction of the original intervention. It does not demonstrate general-purpose model repair or a unique causal neural circuit.
 
@@ -140,7 +140,7 @@ The scripts validate the archive's checksum and complete factorial coverage befo
 
 - [Fork this repository](https://github.com/Harmain11/fluid-tensors/fork) to experiment on your own branch.
 - [Download the repository as ZIP](https://github.com/Harmain11/fluid-tensors/archive/refs/heads/main.zip) to inspect the source without Git.
-- [Read the paper on Zenodo](https://doi.org/10.5281/zenodo.24284827) before interpreting or extending the intervention results.
+- [Read the paper on Zenodo](https://doi.org/10.5281/zenodo.24338059) before interpreting or extending the intervention results.
 
 If you modify the analysis, report the original archived baseline separately from any newly generated data and disclose methodological changes.
 
@@ -202,7 +202,7 @@ The following items are **future research directions**, not completed claims:
 ## Publication and citation
 
 **Dastgir, H. (2026).** *One Frozen Edit, Four Ways to Ask: Prompt-Conditioned Functional Effects in a Transformer.* Working preprint, Zenodo.  
-**DOI:** [10.5281/zenodo.24284827](https://doi.org/10.5281/zenodo.24284827)
+**DOI:** [10.5281/zenodo.24338059](https://doi.org/10.5281/zenodo.24338059)
 
 Citation metadata are also provided in [`CITATION.cff`](CITATION.cff).
 
@@ -214,8 +214,8 @@ Citation metadata are also provided in [`CITATION.cff`](CITATION.cff).
   title     = {One Frozen Edit, Four Ways to Ask: Prompt-Conditioned Functional Effects in a Transformer},
   year      = {2026},
   publisher = {Zenodo},
-  doi       = {10.5281/zenodo.24284827},
-  url       = {https://doi.org/10.5281/zenodo.24284827},
+  doi       = {10.5281/zenodo.24338059},
+  url       = {https://doi.org/10.5281/zenodo.24338059},
   note      = {Working preprint; not peer reviewed}
 }
 ```
@@ -251,4 +251,4 @@ The manuscript, original figures, and research data are available under **CC BY 
 
 ---
 
-**Fluid Tensors** · [Research website](https://harmain11.github.io/fluid-tensors/) · [GitHub repository](https://github.com/Harmain11/fluid-tensors) · [Zenodo DOI](https://doi.org/10.5281/zenodo.24284827) · [Contact](mailto:harmainmughal215@gmail.com) · [LinkedIn](https://www.linkedin.com/in/harmain-mughal-7b1845379)
+**Fluid Tensors** · [Research website](https://harmain11.github.io/fluid-tensors/) · [GitHub repository](https://github.com/Harmain11/fluid-tensors) · [Zenodo DOI](https://doi.org/10.5281/zenodo.24338059) · [Contact](mailto:harmainmughal215@gmail.com) · [LinkedIn](https://www.linkedin.com/in/harmain-mughal-7b1845379)
