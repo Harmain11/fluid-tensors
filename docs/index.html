@@ -42,7 +42,7 @@
         <a href="#overview" aria-current="page">Overview</a>
         <a href="#explore">Results</a>
         <a href="#evidence">Figures</a>
-        <a href="#confirmation">New GPU result</a>
+        <a href="#confirmation">Version 3 GPU results</a>
         <a href="papers/one-frozen-edit.html">Full article</a>
         <a href="https://github.com/Harmain11/fluid-tensors">Code</a>
       </nav>
@@ -54,11 +54,11 @@
     <section class="paper-hero" id="overview">
       <div class="shell hero-grid">
         <div class="hero-copy">
-          <p class="paper-category">Fluid Tensors <span class="category-separator">/</span> Research note 01</p>
+          <p class="paper-category">Fluid Tensors <span class="category-separator">/</span> Research note 01 <span class="release-badge">Zenodo Version 3 · 18 Nov 2026</span></p>
           <h1>One frozen edit.<br><em>Four ways to ask.</em></h1>
           <p class="paper-subtitle">Prompt-Conditioned Functional Effects in a Transformer</p>
-          <p class="hero-intro">An archived transformer intervention looked different when the same questions were phrased differently. We traced the numbers, the controls, and the limits of the result.</p>
-          <div class="hero-actions"><a class="button button-primary" href="#explore">Explore the finding <span aria-hidden="true">↘</span></a><a class="hero-text-link" href="papers/one-frozen-edit.html">Read the research article <span aria-hidden="true">↗</span></a></div>
+          <p class="hero-intro">First, we found that a frozen weight edit responded differently to different question wordings. Then we ran the same model again on <strong>64 additional questions</strong>. The Version 3 GPU confirmation measures a matched signed contrast of <strong>+0.193491</strong>—a model-response statistic, not answer accuracy.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#confirmation">See Version 3 GPU figures <span aria-hidden="true">↘</span></a><a class="hero-text-link" href="#explore">Original experiment ↘</a><a class="hero-text-link" href="papers/one-frozen-edit.html">Full article ↗</a></div>
         </div>
 
         <figure class="hero-comparison" aria-label="Recorded signed-edit attenuation contrasts by original, reworded, formal, and terse question wording, not answer accuracy">
@@ -74,25 +74,41 @@
           <figcaption>Signed direction; mean math-plus-format minus generic attenuation, across 32 archived questions. <strong>Not answer accuracy.</strong></figcaption>
         </figure>
       </div>
-      <div class="hero-bottom shell"><span>Qwen2.5-1.5B</span><span>32 paired question units</span><span>Research preprint · November 2026</span></div>
+      <div class="hero-bottom shell"><span>Qwen2.5-1.5B-Instruct · one frozen edit</span><span>32 archival + 64 new question identities</span><span>Zenodo Version 3 · 18 November 2026</span></div>
     </section>
 
     <div class="paper-meta reading-width">
       <div><span class="meta-label">Author</span><strong>Harmain Dastgir</strong></div>
       <div><span class="meta-label">Affiliation</span><span>Independent Researcher</span></div>
-      <div><span class="meta-label">Published</span><span>November 16, 2026</span></div>
-      <div><span class="meta-label">Status</span><span>Working preprint</span></div>
+      <div><span class="meta-label">Updated</span><span>November 18, 2026</span></div>
+      <div><span class="meta-label">Status</span><span>Version 3 · Working preprint</span></div>
     </div>
 
     <article class="reading-width research-prose">
       <aside class="tldr" aria-label="Summary of the research">
         <strong>TL;DR</strong>
-        <p>We revisited an archived experiment where a transformer weight edit was held fixed and the wording of a question changed. The measured <em>functional attenuation contrast</em> was +0.206 under the original wording but −0.021 when the question was reworded.</p>
-        <p>This is evidence of <strong>prompt-conditioned variation in one historical model/edit setting</strong>—not improved mathematical answer accuracy, proof of a particular neural circuit, or general-purpose model repair.</p>
+        <p>The original 32-question study showed that the same frozen edit measured <strong>+0.206</strong> under original wording but <strong>−0.021</strong> after rewording. Version 3 adds a fresh GPU run on 64 further question identities: the signed matched contrast averaged <strong>+0.193491</strong> (95% question-bootstrap interval <strong>[+0.166896, +0.219002]</strong>), with <strong>62 of 64</strong> paired effects positive.</p>
+        <p>The original and confirmation results describe <strong>output-logit response geometry in one pinned model/edit setting</strong>—not improved math-answer accuracy, independent model-family replication, proof of a particular circuit, or general-purpose model repair.</p>
       </aside>
 
       <p class="intro">When a model's behavior changes after a weight edit, it is tempting to attribute the change entirely to the intervention. But prompts are part of the computation too. A small change in wording can change which features the model activates and how an edit appears in a recorded response measure.</p>
       <p>Our question is simple: <strong>does the same historical edit give the same measured response across different ways of asking a question?</strong> We analyze the archived numbers directly, keeping the claims within what the data can establish.</p>
+
+      <section id="confirmation" aria-labelledby="confirmation-heading">
+        <p class="paper-category">Zenodo Version 3 / GPU confirmation / 18 November 2026</p>
+        <h2 id="confirmation-heading">Version 3: we ran the model again on 64 more questions.</h2>
+        <p>The first release audited 1,024 measurements already in an archive. The next step was a <strong>new GPU run</strong> on the same pinned Qwen2.5-1.5B-Instruct model and the same frozen rank-four edit. We replayed the original 32-question contrast, then tested 64 additional GSM8K question identities outside the frozen historical registry. This is confirmation <em>within one model</em>, not a claim about every AI model.</p>
+        <div class="study-facts" aria-label="November 18 confirmation results">
+          <div><strong>64</strong><span>Additional question identities</span></div>
+          <div><strong>1,152</strong><span>Complete GPU measurements</span></div>
+          <div><strong>62 / 64</strong><span>Positive matched contrasts</span></div>
+          <div><strong>0</strong><span>Numerical gate failures</span></div>
+        </div>
+        <p>After matching input token counts by a recorded newline-token procedure, the signed-edit contrast averaged <strong>+0.193491</strong> (95% question-bootstrap interval <strong>[+0.166896, +0.219002]</strong>). The same-sized orthogonal control was <strong>+0.004060</strong> (interval crosses zero). All 128 original replay measurements matched the archived results. These statistics describe <strong>how the model's output logits respond</strong> to the edit, not whether it answered the math questions correctly.</p>
+        <figure class="research-figure"><button type="button" data-figure-open aria-label="Enlarge new GPU confirmation comparison"><img src="assets/p1_confirmation_condition_contrasts.png" alt="New study: original replay, raw signed, token-count-matched signed and orthogonal control response contrasts with question-bootstrap 95 percent confidence intervals." loading="lazy"></button><figcaption><strong>New Figure A1 · November 18.</strong> The signed contrast is positive on new questions, including the recorded matched condition, while the orthogonal direction is near zero.</figcaption></figure>
+        <figure class="research-figure"><button type="button" data-figure-open aria-label="Enlarge raw versus matched question comparisons"><img src="assets/p1_confirmation_matched_vs_raw.png" alt="New study: paired question-level response contrasts and scatterplot showing effect change between raw and token-count-matched prompts." loading="lazy"></button><figcaption><strong>New Figure A2.</strong> Matching changed the measured magnitude. Newline-token padding equalizes lengths but is not semantically neutral, so remaining format and positional confounds are disclosed.</figcaption></figure>
+        <p>The 64 additions came from GSM8K's <strong>training split</strong>, so independence from model pretraining is unknown. No second model or separate laboratory was tested. <a href="https://github.com/Harmain11/fluid-tensors/tree/main/paper1-confirmation-2026-11-18">Read the dated confirmation, PDF, complete GPU ZIP and audit trail →</a></p>
+      </section>
 
       <section id="explore" aria-labelledby="result-heading">
         <h2 id="result-heading">The result</h2>
@@ -148,22 +164,6 @@
         <figure class="research-figure"><button type="button" data-figure-open aria-label="Enlarge Figure 4"><img src="assets/figure04_factorial_response_heatmaps.png" alt="Complete mean attenuation heatmaps by wording and instruction template for both directions" loading="lazy"></button><figcaption><strong>Figure 4.</strong> Complete wording-by-template mean attenuation for both directions. These are raw responses rather than the contrasts shown above.</figcaption></figure>
         <figure class="research-figure"><button type="button" data-figure-open aria-label="Enlarge Supplementary Figure S1"><img src="assets/figureS1_bootstrap_distribution.png" alt="Distribution of twenty thousand question-level bootstrap mean estimates" loading="lazy"></button><figcaption><strong>Supplementary Figure S1.</strong> The question-level bootstrap distribution, conditional on the existing selected model/edit setup.</figcaption></figure>
         <figure class="research-figure"><button type="button" data-figure-open aria-label="Enlarge Supplementary Figure S2"><img src="assets/figureS2_prompt_token_diagnostics.png" alt="Prompt token lengths reveal different instruction lengths and positions" loading="lazy"></button><figcaption><strong>Supplementary Figure S2.</strong> The math-plus-format template adds 14–15 tokens. Prompt lengths and positions were not matched, so semantics cannot be isolated.</figcaption></figure>
-      </section>
-
-      <section id="confirmation" aria-labelledby="confirmation-heading">
-        <p class="paper-category">Research update / 18 November 2026</p>
-        <h2 id="confirmation-heading">We ran the model again—on 64 more questions.</h2>
-        <p>The first release audited 1,024 measurements already in an archive. The next step was a <strong>new GPU run</strong> on the same pinned Qwen2.5-1.5B-Instruct model and the same frozen rank-four edit. We replayed the original 32-question contrast, then tested 64 additional GSM8K question identities outside the frozen historical registry. This is confirmation <em>within one model</em>, not a claim about every AI model.</p>
-        <div class="study-facts" aria-label="November 18 confirmation results">
-          <div><strong>64</strong><span>Additional question identities</span></div>
-          <div><strong>1,152</strong><span>Complete GPU measurements</span></div>
-          <div><strong>62 / 64</strong><span>Positive matched contrasts</span></div>
-          <div><strong>0</strong><span>Numerical gate failures</span></div>
-        </div>
-        <p>After matching input token counts by a recorded newline-token procedure, the signed-edit contrast averaged <strong>+0.193491</strong> (95% question-bootstrap interval <strong>[+0.166896, +0.219002]</strong>). The same-sized orthogonal control was <strong>+0.004060</strong> (interval crosses zero). All 128 original replay measurements matched the archived results. These statistics describe <strong>how the model's output logits respond</strong> to the edit, not whether it answered the math questions correctly.</p>
-        <figure class="research-figure"><button type="button" data-figure-open aria-label="Enlarge new GPU confirmation comparison"><img src="assets/p1_confirmation_condition_contrasts.png" alt="New study: original replay, raw signed, token-count-matched signed and orthogonal control response contrasts with question-bootstrap 95 percent confidence intervals." loading="lazy"></button><figcaption><strong>New Figure A1 · November 18.</strong> The signed contrast is positive on new questions, including the recorded matched condition, while the orthogonal direction is near zero.</figcaption></figure>
-        <figure class="research-figure"><button type="button" data-figure-open aria-label="Enlarge raw versus matched question comparisons"><img src="assets/p1_confirmation_matched_vs_raw.png" alt="New study: paired question-level response contrasts and scatterplot showing effect change between raw and token-count-matched prompts." loading="lazy"></button><figcaption><strong>New Figure A2.</strong> Matching changed the measured magnitude. Newline-token padding equalizes lengths but is not semantically neutral, so remaining format and positional confounds are disclosed.</figcaption></figure>
-        <p>The 64 additions came from GSM8K's <strong>training split</strong>, so independence from model pretraining is unknown. No second model or separate laboratory was tested. <a href="https://github.com/Harmain11/fluid-tensors/tree/main/paper1-confirmation-2026-11-18">Read the dated confirmation, PDF, complete GPU ZIP and audit trail →</a></p>
       </section>
 
       <section id="methods" aria-labelledby="methods-heading">

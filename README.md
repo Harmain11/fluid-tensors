@@ -4,6 +4,8 @@
 
 <h3>One Frozen Edit. Four Ways to Ask.</h3>
 
+<p><strong>Paper 1 · Zenodo Version 3 · New 64-question GPU confirmation (18 November 2026)</strong></p>
+
 <p><strong>Open, reproducible research on prompt-conditioned transformer weight editing.</strong></p>
 
 <p>
@@ -29,24 +31,44 @@
   <a href="https://orcid.org/0009-0004-1090-545X">ORCID</a>
 </p>
 
-<sub>Harmain Dastgir · Independent Researcher · November 16, 2026 · Working preprint (not peer reviewed)</sub>
+<sub>Harmain Dastgir · Independent Researcher · First published November 16, 2026 · Version 3 updated November 18, 2026 · Working preprint (not peer reviewed)</sub>
 
 </div>
 
 ---
 
 
-## November 18, 2026 — New within-model GPU confirmation (v1.2)
+## November 18, 2026 — Zenodo Version 3: new within-model GPU confirmation
 
 The [Paper 1 confirmation update](paper1-confirmation-2026-11-18/README.md) adds a freshly completed **64-question within-model GPU confirmation** on the pinned Qwen2.5-1.5B-Instruct checkpoint. The specific prompt-conditioned final-token logit response contrast persisted under recorded input-token-count matching: **+0.193491** with a question-bootstrap 95% interval **[+0.166896, +0.219002]**; **62/64** fresh questions were positive. The norm-matched orthogonal control averaged **+0.004060**. The original 32-question contrast was also replayed exactly (128/128 cells), with no numeric-gate failures across all 1,152 new-run measurements.
 
 This is **not a math-answer accuracy result**, proof of general model repair, or replication on a different model. The new GSM8K train questions were disjoint from the frozen historical registry but not necessarily from pretraining. The explicit newline-token matching is not semantically neutral. The earlier archived versions and DOI history are preserved. **The November 18 Version 3 is now published**: [DOI 10.5281/zenodo.24338059](https://doi.org/10.5281/zenodo.24338059).
 
-- [Complete v1.2 reading copy (PDF)](paper1-confirmation-2026-11-18/One_Frozen_Edit_Paper_1_v1_2_Research_Update.pdf)
-- [Supplement and GPU evidence archive](paper1-confirmation-2026-11-18/README.md)
+- [Complete 17-page reading copy (manuscript revision v1.2, Zenodo Version 3)](paper1-confirmation-2026-11-18/One_Frozen_Edit_Paper_1_v1_2_Research_Update.pdf)
+- [Supplement and independently checkable GPU evidence archive](paper1-confirmation-2026-11-18/README.md)
+
+## Version 3 confirmation — two new research plots
+
+These **new figures** come from the November 18 GPU run. They complement—not replace—the six original archival figures below.
+
+| **Figure A1 · Fresh-question contrast and control** | **Figure A2 · Token-matching sensitivity** |
+|:---:|:---:|
+| [![Version 3 Figure A1: new-question signed-edit response contrast and orthogonal control with question-level bootstrap intervals](docs/assets/p1_confirmation_condition_contrasts.png)](docs/assets/p1_confirmation_condition_contrasts.png) | [![Version 3 Figure A2: 64 individual matched and raw prompt response contrasts](docs/assets/p1_confirmation_matched_vs_raw.png)](docs/assets/p1_confirmation_matched_vs_raw.png) |
+| On 64 additional questions, the token-count-matched signed contrast was **+0.193491** (95% question-bootstrap interval **[+0.166896, +0.219002]**); the matched orthogonal control was **+0.004060** (interval crosses zero). | The same frozen intervention produced **+0.229246** under raw prompts versus **+0.193491** after the recorded newline-token matching procedure. This is a sensitivity diagnostic, not proof that semantic confounds are removed. |
+
+| Evidence item | Recorded result | Meaning |
+|---|---:|---|
+| New questions | **64** GSM8K train identities | Not present in the historical question registry; pretraining exposure unknown |
+| Positive paired effects | **62 / 64** | Positive sign under the selected matched comparison |
+| GPU response cells | **1,152 / 1,152** | Complete cells with no numerical validation failures |
+| Historical replay | **128 / 128** values matched | Verifies a bounded replay on the same pinned model/edit |
+| Orthogonal control (matched) | **+0.004060** | Near-zero mean in this control, not evidence of a unique mechanism |
+
+*These are last-token output-logit response statistics, **not** percentages or task-answer accuracies. Both plots are available at full resolution in the [research website](https://harmain11.github.io/fluid-tensors/#confirmation), the [full article](https://harmain11.github.io/fluid-tensors/papers/one-frozen-edit.html#confirmation), and the [Version 3 Zenodo record](https://zenodo.org/records/24338059).*
 
 ## Contents
 
+- [Version 3 plots and confirmation](#version-3-confirmation--two-new-research-plots)
 - [Research overview](#research-overview)
 - [The primary finding](#the-primary-finding)
 - [Scientific figures](#scientific-figures)
@@ -65,20 +87,23 @@ This is **not a math-answer accuracy result**, proof of general model repair, or
 
 This study analyzes a frozen factorial experiment from a historical **Qwen2.5-1.5B** weight-editing setup. Rather than asserting broad model repair, it asks a narrower question: whether the recorded *functional attenuation response* depends on prompt wording and instruction template.
 
-The archive contains **1,024 complete measurements** from 32 question identifiers, two historical edit directions, four wording variants, and four instruction templates. We recompute the statistical comparisons from the original archived table and publish the source data, methods, six figures, and reproducibility scripts.
+The archive contains **1,024 complete measurements** from 32 question identifiers, two historical edit directions, four wording variants, and four instruction templates. We recompute the historical statistics from the archived table and publish the original six figures. The November 18, 2026 update adds 1,152 fresh GPU response measurements, 64 additional question identities, two more figures, and an independently verifiable results bundle. The intervention and model remain the same.
 
 | Study scope | Details |
 |---|---|
-| Model | Qwen2.5-1.5B, one historical editing context |
-| Question units | 32 paired questions |
-| Factorial panel | 2 directions × 4 wordings × 4 templates |
-| Total archived cells | **1,024** |
+| Model | Qwen2.5-1.5B-Instruct, one frozen model/edit setup |
+| Original question units | 32 paired questions |
+| Original factorial panel | 2 directions × 4 wordings × 4 templates |
+| Original archival cells | **1,024** |
+| New GPU confirmation | **64** additional GSM8K train identities; **1,152** recorded cells |
+| Fresh signed matched effect | **+0.193491** [95% bootstrap interval +0.166896 to +0.219002] |
+| Latest paper release | **Zenodo Version 3**; DOI 10.5281/zenodo.24338059 |
 | Reported metric | Functional **attenuation** response |
 | Analysis stack | Python, NumPy, Matplotlib |
 | Research website | HTML5, CSS3, vanilla JavaScript, GitHub Pages |
 | Publication | [Open Zenodo preprint](https://doi.org/10.5281/zenodo.24338059) |
 
-> **Scientific scope:** The measurements describe functional attenuation, **not mathematical answer accuracy**. This is an archival reanalysis, not an independent GPU reproduction of the original intervention. It does not demonstrate general-purpose model repair or a unique causal neural circuit.
+> **Scientific scope:** The original six-figure analysis is an archival reanalysis; the separately dated follow-up performed a genuine GPU replay and new-question test **on the same pinned model/edit**. Neither phase measures math-answer correctness, independently selects a new edit, demonstrates general-purpose model repair, or replicates across model families or laboratories. Token-count matching used explicit newline-token IDs and leaves potential formatting, semantic, and positional effects.
 
 ## The primary finding
 
@@ -97,7 +122,7 @@ The conclusion is deliberately limited: a recorded functional effect varied subs
 
 ## Scientific figures
 
-The four main figures cover wording effects, a direction control, question-level comparisons, and the complete factorial response. Click any figure for the full-size image.
+**Eight figures are now available.** The [two new Version 3 GPU plots](#version-3-confirmation--two-new-research-plots) appear near the top of this README. The six historical figures below cover wording effects, a direction control, question-level comparisons, the complete factorial response, and two diagnostic views. Click any figure for its full-size image.
 
 | Figure 1 — Wording contrasts | Figure 2 — Direction control |
 |:---:|:---:|
@@ -116,11 +141,11 @@ The four main figures cover wording effects, a direction control, question-level
 | [![Question bootstrap distribution](docs/assets/figureS1_bootstrap_distribution.png)](docs/assets/figureS1_bootstrap_distribution.png) | [![Prompt token-count diagnostics](docs/assets/figureS2_prompt_token_diagnostics.png)](docs/assets/figureS2_prompt_token_diagnostics.png) |
 | 20,000 question-level resamples of the paired mean. | The compared templates differ by 14–15 tokens; lengths were not matched. |
 
-All six graphics are reproducible from the same checksummed source table. Their full methodological interpretation is provided in the [research article](https://harmain11.github.io/fluid-tensors/papers/one-frozen-edit.html) and [11-page manuscript](paper/One_Frozen_Edit_Study_Preprint.pdf).
+The **six historical figures** are reproducible from the checksummed archival table. **Figures A1 and A2** come from the separately archived November 18 GPU run and its hashed evidence. The integrated [17-page Version 3 reading copy](paper1-confirmation-2026-11-18/One_Frozen_Edit_Paper_1_v1_2_Research_Update.pdf) preserves the original manuscript pages and adds a dated scientific supplement.
 
 ## Reproduce the analysis
 
-The archived numerical results and figures can be regenerated locally. **No GPU, API key, model download, or paid service is required for this table-level replay.**
+The archived numerical results and six original figures can be regenerated locally. The **new 1,152-cell GPU results can be audited offline** from the published ZIP. **No GPU, API key, model download, or paid service is required for either stored-data audit**. Actually repeating model inference on a GPU is a separate operation.
 
 **Requirements:** Python 3.9+, NumPy, and Matplotlib. The repository uses Python for statistical reanalysis, and dependency-free HTML/CSS/JavaScript for the research website.
 
@@ -134,7 +159,18 @@ python reproduce_deposit.py
 python make_study_figures.py
 ```
 
-The scripts validate the archive's checksum and complete factorial coverage before recalculating the means, paired effects, uncertainty statistics, and figures.
+The scripts validate the original archive's checksum and factorial coverage before recalculating its means, paired effects, uncertainty statistics, and six historical figures.
+
+**To audit the Version 3 GPU run without rerunning inference:** download the [published GPU results ZIP](paper1-confirmation-2026-11-18/FT_P1_CONFIRMATION_2026_11_18_ALL_RESULTS.zip). It includes the offline checker and its companion module. With Python, NumPy and a local copy of the ZIP:
+
+```bash
+unzip FT_P1_CONFIRMATION_2026_11_18_ALL_RESULTS.zip verify_results_zip.py confirmation_core.py -d p1_audit
+python p1_audit/verify_results_zip.py FT_P1_CONFIRMATION_2026_11_18_ALL_RESULTS.zip
+```
+
+*On Windows without `unzip`, extract those two named Python files using File Explorer, then run the second command.*
+
+Expected evidence checks include a valid ZIP hash manifest, 1,152 recorded cells, an exact 128-cell historical replay, and the reported matched signed-versus-control measurements. See the [confirmation methods and limitations](paper1-confirmation-2026-11-18/README.md).
 
 ### Option B — Fork or download the research
 
@@ -153,7 +189,8 @@ Key reproducibility files:
 | [`make_study_figures.py`](make_study_figures.py) | Regeneration of all six scientific figures |
 | [`figures/FIGURE_STATISTICS.json`](figures/FIGURE_STATISTICS.json) | Machine-readable figure statistics |
 | [`figures/QUESTION_LEVEL_CONTRASTS.csv`](figures/QUESTION_LEVEL_CONTRASTS.csv) | Per-question paired values |
-| [`paper/One_Frozen_Edit_Study_Preprint.pdf`](paper/One_Frozen_Edit_Study_Preprint.pdf) | Complete manuscript |
+| [`paper/One_Frozen_Edit_Study_Preprint.pdf`](paper/One_Frozen_Edit_Study_Preprint.pdf) | Historical original preprint (preserved) |
+| [`paper1-confirmation-2026-11-18/`](paper1-confirmation-2026-11-18/) | New GPU results ZIP, updated reading copy, plots, and audit materials |
 
 **Reproducibility boundary:** These commands reproduce calculations using stored measurements. They do not recreate the original model checkpoint, edit-selection procedure, or model inference run.
 
@@ -163,14 +200,15 @@ Key reproducibility files:
 fluid-tensors/
 ├── data/                 # Archived response table and derived summaries
 ├── figures/              # Four primary and two supplementary figures
-├── paper/                # Full 11-page scientific preprint (PDF)
+├── paper/                # Preserved 11-page original preprint
+├── paper1-confirmation-2026-11-18/ # Version 3 research update, GPU data, 17-page reading copy
 ├── docs/                 # Interactive GitHub Pages research website
 │   ├── index.html        # Interactive scientific editorial homepage
 │   ├── papers/           # Full illustrated research article
-│   └── assets/           # Scientific plots and branded images
+│   └── assets/           # Six original plus two confirmation plots, branded images
 ├── tests/                # Data, interactivity, and website checks
 ├── reproduce_deposit.py  # Archived numerical reanalysis
-├── make_study_figures.py # Regenerate six verified figures
+├── make_study_figures.py # Regenerate six historical verified figures
 ├── requirements.txt      # Python dependencies
 ├── CITATION.cff          # GitHub citation metadata
 └── README.md             # Project overview and research access
@@ -180,11 +218,11 @@ The interactive site is served through [GitHub Pages](https://harmain11.github.i
 
 ## Interpretation and limitations
 
-1. **Response is not correctness.** Attenuation contrasts cannot be interpreted as improved mathematical reasoning accuracy.
-2. **Prompt conditions are confounded.** Wording, instruction length, and token positions changed together; comparisons were not length-matched.
-3. **One model/edit setting.** The analysis does not establish a result across independent model families or freshly selected edit directions.
-4. **Limited direction control.** One historical rotated direction is not sufficient to identify a unique causal mechanism.
-5. **Conditional uncertainty.** The bootstrap resamples 32 questions from this archived panel; it does not account for the historical choice of intervention.
+1. **Response is not correctness.** Neither the archived attenuation nor the new final-token logit response measures final-answer accuracy.
+2. **Prompt and position confounds remain.** The archival prompts differed in length. The fresh run equalized token counts via explicit newline-token IDs, but this does not guarantee equivalent semantics, positions, or natural-token distributions.
+3. **One frozen model/edit setting.** The 64 further questions add within-model evidence, not cross-family or external-lab replication; the intervention was not newly selected by an independent team.
+4. **Question provenance.** The new identities are from GSM8K's train split, so possible pretraining exposure cannot be ruled out.
+5. **Limited control and conditional intervals.** The historical rotated control and fresh norm-matched orthogonal control inform direction specificity but do not prove a unique circuit. Question-bootstrap intervals are conditional on the selected edit and evaluated questions.
 
 A stronger follow-up would use prospectively selected edits, independently reconstructed model-side experiments, matched-length prompt controls, multiple model families, and blinded final-answer correctness scoring.
 
@@ -192,16 +230,17 @@ A stronger follow-up would use prospectively selected edits, independently recon
 
 The following items are **future research directions**, not completed claims:
 
-- [ ] Independently reproduce the model-side inference and editing procedure.
-- [ ] Test independently selected edit directions across multiple open-weight models.
-- [ ] Compare meaning-preserving paraphrases with token-length- and position-matched controls.
+- [x] Replay the frozen original contrast with the same pinned model/edit on a GPU (128/128 archival values matched).
+- [x] Record 64 additional question identities and a token-count-matched orthogonal control on that same model/edit (Version 3).
+- [ ] Independently construct new edit directions and test across additional open-weight models.
+- [ ] Compare meaning-preserving paraphrases with stronger token-length- and position-matched semantic placebos.
 - [ ] Measure blinded final-answer correctness alongside functional attenuation.
 - [ ] Evaluate stronger random-direction and activation-level causal controls.
 - [ ] Invite external replication and publish a transparent comparison of confirmed and negative results.
 
 ## Publication and citation
 
-**Dastgir, H. (2026).** *One Frozen Edit, Four Ways to Ask: Prompt-Conditioned Functional Effects in a Transformer.* Working preprint, Zenodo.  
+**Dastgir, H. (2026).** *One Frozen Edit, Four Ways to Ask: Prompt-Conditioned Functional Effects in a Transformer.* **Zenodo Version 3** (November 18, 2026), working preprint; original manuscript plus confirmation supplement.  
 **DOI:** [10.5281/zenodo.24338059](https://doi.org/10.5281/zenodo.24338059)
 
 Citation metadata are also provided in [`CITATION.cff`](CITATION.cff).

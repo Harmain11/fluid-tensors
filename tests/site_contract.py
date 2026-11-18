@@ -74,5 +74,26 @@ class SiteContractTests(unittest.TestCase):
             self.assertIn(caveat.lower(), html.lower())
 
 
+    def test_version_three_figures_are_visible_in_main_readme(self):
+        readme = (DOCS.parent / "README.md").read_text(encoding="utf-8")
+        for figure in ("p1_confirmation_condition_contrasts.png", "p1_confirmation_matched_vs_raw.png"):
+            self.assertIn(f"](docs/assets/{figure})]", readme)
+            self.assertTrue((DOCS / "assets" / figure).is_file())
+        self.assertIn("Zenodo Version 3", readme)
+        self.assertIn("10.5281/zenodo.24338059", readme)
+
+    def test_new_gpu_figures_appear_early_in_published_story(self):
+        home = (DOCS / "index.html").read_text(encoding="utf-8")
+        self.assertIn("Zenodo Version 3", home.split('class="paper-hero"', 1)[1].split("</section>", 1)[0])
+        self.assertLess(home.index('<section id="confirmation"'), home.index('<section id="explore"'))
+        article = (DOCS / "papers" / "one-frozen-edit.html").read_text(encoding="utf-8")
+        hero = article.split('class="article-hero"', 1)[1].split("</section>", 1)[0]
+        self.assertIn("Zenodo Version 3", hero)
+        self.assertIn("../assets/p1_confirmation_condition_contrasts.png", hero)
+        update_notes = (DOCS.parent / "paper1-confirmation-2026-11-18" / "README.md").read_text(encoding="utf-8")
+        self.assertIn("10.5281/zenodo.24338059", update_notes)
+        self.assertNotIn("DOI is pending", update_notes)
+
+
 if __name__ == "__main__":
     unittest.main()
