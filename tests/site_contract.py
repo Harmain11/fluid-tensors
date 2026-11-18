@@ -60,7 +60,7 @@ class SiteContractTests(unittest.TestCase):
         self.assertEqual(len(by_attr(nodes, "button", "data-figure-open")), 8)
         self.assertEqual(len(by_attr(nodes, "dialog", "id")), 1)
         self.assertIn('src="../site.js"', html)
-        self.assertIn("10.5281/zenodo.24280041", html)
+        self.assertIn("10.5281/zenodo.24338059", html)
         self.assertNotIn("REPLACE_", html)
 
     def test_article_preserves_six_historical_and_two_confirmation_figures_and_boundaries(self):
@@ -70,7 +70,7 @@ class SiteContractTests(unittest.TestCase):
         image_names = {Path(attrs.get("src", "")).name for attrs in by_attr(nodes, "img", "src")}
         self.assertTrue({"p1_confirmation_condition_contrasts.png", "p1_confirmation_matched_vs_raw.png"}.issubset(image_names))
         html = article.read_text(encoding="utf-8")
-        for caveat in ["32 question", "reasoning breakthrough", "no length- and position-matched", "not independently GPU-replayed"]:
+        for caveat in ["32 question", "reasoning breakthrough", "no length- and position-matched", "not external-model or independent-lab replication"]:
             self.assertIn(caveat.lower(), html.lower())
 
 

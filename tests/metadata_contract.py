@@ -78,8 +78,8 @@ class MetadataContractTests(unittest.TestCase):
     def test_citation_has_minted_doi_and_readme_link(self):
         citation = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
-        self.assertIn("10.5281/zenodo.24284827", citation)
-        self.assertIn("10.5281/zenodo.24284827", readme)
+        self.assertIn("10.5281/zenodo.24338059", citation)
+        self.assertIn("10.5281/zenodo.24338059", readme)
         self.assertIn(SITE, readme)
         self.assertNotIn("REPLACE_", readme)
 
