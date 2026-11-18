@@ -205,4 +205,12 @@ code,pre{font-family:Consolas,'SFMono-Regular',monospace;font-size:.85em}code{ba
   .hero-bottom{font-size:10px;padding-bottom:15px}.research-prose{padding-top:36px}
   .research-prose h2,.article-body h2{font-size:33px}.article-hero h1{font-size:48px}
 }
+/* Search and Scholar discovery: visible, human-readable abstracts and research answers. */
+.research-abstract{margin:26px 0 22px;padding:19px 23px;background:#fff;border:1px solid #d9e8de;border-left:4px solid var(--green);border-radius:8px}
+.research-abstract h2{margin:0 0 10px;font-size:19px;line-height:1.35;color:var(--deep)}
+.research-abstract p{margin:0 0 11px;font-size:14px;line-height:1.72}
+.research-abstract p.abstract-links{margin-bottom:0;font-size:13px}
+#questions h3{margin:24px 0 8px;font-size:20px;line-height:1.35;color:var(--deep)}
+#questions h3+p{margin-top:0}
+@media(max-width:650px){.research-abstract{padding:17px 16px}.research-abstract p{font-size:14px}#questions h3{font-size:19px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
