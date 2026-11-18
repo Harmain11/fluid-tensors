@@ -35,6 +35,16 @@
 
 ---
 
+
+## November 18, 2026 — New within-model GPU confirmation (v1.2)
+
+The [Paper 1 confirmation update](paper1-confirmation-2026-11-18/README.md) adds a freshly completed **64-question within-model GPU confirmation** on the pinned Qwen2.5-1.5B-Instruct checkpoint. The specific prompt-conditioned final-token logit response contrast persisted under recorded input-token-count matching: **+0.193491** with a question-bootstrap 95% interval **[+0.166896, +0.219002]**; **62/64** fresh questions were positive. The norm-matched orthogonal control averaged **+0.004060**. The original 32-question contrast was also replayed exactly (128/128 cells), with no numeric-gate failures across all 1,152 new-run measurements.
+
+This is **not a math-answer accuracy result**, proof of general model repair, or replication on a different model. The new GSM8K train questions were disjoint from the frozen historical registry but not necessarily from pretraining. The explicit newline-token matching is not semantically neutral. The earlier archived results, citations and Zenodo DOI remain preserved; any new version-specific Zenodo DOI will be linked after deposit.
+
+- [Complete v1.2 reading copy (PDF)](paper1-confirmation-2026-11-18/One_Frozen_Edit_Paper_1_v1_2_Research_Update.pdf)
+- [Supplement and GPU evidence archive](paper1-confirmation-2026-11-18/README.md)
+
 ## Contents
 
 - [Research overview](#research-overview)
