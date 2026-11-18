@@ -3,9 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Why one frozen transformer weight edit changed its measured functional attenuation response when the prompt wording changed, and why this does not establish reasoning gains.">
-  <title>One Frozen Edit, Four Ways to Ask — Full Research Article | Fluid Tensors</title>
+  <meta name="description" content="Fluid Tensors Paper 1 studies prompt-conditioned effects of one frozen Qwen weight edit. Read its 64-question GPU confirmation, full preprint, figures and limitations.">
+  <title>Fluid Tensors Paper 1 — One Frozen Edit, Four Ways to Ask</title>
   <meta name="author" content="Harmain Dastgir">
+  <meta name="citation_title" content="One Frozen Edit, Four Ways to Ask: Prompt-Conditioned Functional Effects in a Transformer">
+  <meta name="citation_author" content="Harmain Dastgir">
+  <meta name="citation_publication_date" content="2026/11/16">
+  <meta name="citation_online_date" content="2026/11/18">
+  <meta name="citation_doi" content="10.5281/zenodo.24338059">
+  <meta name="citation_pdf_url" content="https://harmain11.github.io/fluid-tensors/papers/One_Frozen_Edit_Paper_1_v1_2_Research_Update.pdf">
+  <link rel="alternate" type="application/pdf" href="One_Frozen_Edit_Paper_1_v1_2_Research_Update.pdf">
   <meta name="theme-color" content="#f3f8f5">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://harmain11.github.io/fluid-tensors/papers/one-frozen-edit.html">
@@ -14,7 +21,7 @@
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="One Frozen Edit, Four Ways to Ask — Scientific Research Article">
+  <meta property="og:title" content="Fluid Tensors Paper 1 — One Frozen Edit, Four Ways to Ask">
   <meta property="og:description" content="A fixed historical edit changes attenuation contrast with prompt wording. Full methods, six archived-result plots, two new confirmation figures, reproducibility code and explicit limitations.">
   <meta property="og:url" content="https://harmain11.github.io/fluid-tensors/papers/one-frozen-edit.html">
   <meta property="og:image" content="https://harmain11.github.io/fluid-tensors/assets/social-cover.png">
@@ -27,7 +34,7 @@
   <meta name="twitter:description" content="17-page revised preprint, eight figures, 1,024 archived cells plus 1,152 GPU confirmation cells. Response geometry, not answer accuracy.">
   <meta name="twitter:image" content="https://harmain11.github.io/fluid-tensors/assets/social-cover.png">
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"One Frozen Edit, Four Ways to Ask: Prompt-Conditioned Functional Effects in a Transformer","name":"One Frozen Edit, Four Ways to Ask: Prompt-Conditioned Functional Effects in a Transformer","description":"An archival reanalysis of prompt-conditioned attenuation contrasts from one historical Qwen2.5-1.5B weight-editing setting, with 32 original paired questions, a later 64-question within-model GPU confirmation, eight figures, and explicit causal limitations.","url":"https://harmain11.github.io/fluid-tensors/papers/one-frozen-edit.html","identifier":"https://doi.org/10.5281/zenodo.24338059","sameAs":"https://zenodo.org/records/24338059","datePublished":"2026-11-16","dateModified":"2026-11-18","inLanguage":"en","isAccessibleForFree":true,"author":{"@type":"Person","name":"Harmain Dastgir","sameAs":"https://www.linkedin.com/in/harmain-mughal-7b1845379","affiliation":{"@type":"Organization","name":"Independent Researcher"}},"publisher":{"@type":"Organization","name":"Zenodo"},"creativeWorkStatus":"Working preprint; not peer reviewed","license":"https://creativecommons.org/licenses/by/4.0/","keywords":["transformer model editing","prompt sensitivity","weight-space interventions","attenuation","reproducible research"]}
+    {"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"One Frozen Edit, Four Ways to Ask: Prompt-Conditioned Functional Effects in a Transformer","name":"One Frozen Edit, Four Ways to Ask: Prompt-Conditioned Functional Effects in a Transformer","description":"An archival reanalysis of prompt-conditioned attenuation contrasts from one historical Qwen2.5-1.5B weight-editing setting, with 32 original paired questions, a later 64-question within-model GPU confirmation, eight figures, and explicit causal limitations.","url":"https://harmain11.github.io/fluid-tensors/papers/one-frozen-edit.html","identifier":"https://doi.org/10.5281/zenodo.24338059","sameAs":"https://zenodo.org/records/24338059","datePublished":"2026-11-16","dateModified":"2026-11-18","inLanguage":"en","isAccessibleForFree":true,"author":{"@type":"Person","name":"Harmain Dastgir","sameAs":"https://www.linkedin.com/in/harmain-mughal-7b1845379","affiliation":{"@type":"Organization","name":"Independent Researcher"}},"publisher":{"@type":"Organization","name":"Zenodo"},"creativeWorkStatus":"Working preprint; not peer reviewed","license":"https://creativecommons.org/licenses/by/4.0/","keywords":["Fluid Tensors","transformer model editing","prompt sensitivity","weight-space interventions","attenuation","reproducible research"]}
   </script>
   <link rel="stylesheet" href="../editorial.css?v=paper1-v3-20261118">
   <script type="module" src="../site.js"></script>
@@ -43,6 +50,11 @@
         <h1>One Frozen Edit, Four Ways to Ask</h1>
         <p class="article-dek">Prompt-Conditioned Functional Effects in a Transformer. A closer look at 1,024 archived measurements and 1,152 new GPU confirmation measurements, with eight research and diagnostic figures.</p>
         <div class="article-author"><span>Harmain Dastgir</span><span>Independent Researcher</span><span>First published 16 November 2026 • Version 3 released 18 November 2026</span></div>
+        <section class="research-abstract" aria-labelledby="abstract-heading">
+          <h2 id="abstract-heading">Abstract</h2>
+          <p>This Fluid Tensors working preprint investigates whether the measured response to one frozen transformer weight intervention changes with prompt wording and instruction format. The archived Qwen2.5-1.5B-Instruct factorial study contains 1,024 response-geometry measurements from 32 GSM8K question identities, two intervention directions, four wording variants and four instruction templates. A November 18, 2026 GPU run replayed 128 archived cells and evaluated 64 additional GSM8K train questions using the same pinned model and edit. Across the new questions, the token-count-matched signed-edit contrast mean was +0.193491 (95% question-bootstrap interval [+0.166896, +0.219002]); 62 of 64 question-level effects were positive. The equal-norm orthogonal-control mean was +0.004060. These are last-token output-logit attenuation responses, not mathematics-answer accuracy. This within-model confirmation does not show cross-model generalization, isolate a neural circuit, or establish general-purpose model repair; residual formatting and pretraining-exposure confounds remain. The article links its numerical tables, verification scripts, figures, and archived GPU evidence.</p>
+          <p class="abstract-links">Full text: <a href="One_Frozen_Edit_Paper_1_v1_2_Research_Update.pdf">Version 3 PDF</a> · <a href="https://doi.org/10.5281/zenodo.24338059">Zenodo DOI 10.5281/zenodo.24338059</a> · <a href="https://github.com/Harmain11/fluid-tensors">Reproducible materials</a>.</p>
+        </section>
         <div class="article-cta"><a class="button button-primary" href="https://doi.org/10.5281/zenodo.24338059">Read Version 3 PDF ↗</a><a class="button button-outline" href="#confirmation">See new GPU figures ↘</a><a class="button button-outline" href="https://github.com/Harmain11/fluid-tensors">Code + data ↗</a></div>
         <p class="publication-note">Working preprint • Not peer reviewed • Historical reanalysis plus dated same-model GPU confirmation</p>
         <div class="version3-proof" aria-label="November 18 GPU confirmation overview">
