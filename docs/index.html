@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="Unx2r4sbBdEu0k4Pp3xk49EcWY2MOZFkEbXJriiSrTY">
-  <title>One Frozen Edit, Four Ways to Ask | Fluid Tensors Research</title>
-  <meta name="description" content="A readable, open research note on prompt-conditioned functional effects in one historical transformer weight edit, with an interactive numerical comparison and six archived figures and two new GPU-confirmation figures.">
+  <title>Fluid Tensors — One Frozen Edit, Four Ways to Ask | Paper 1</title>
+  <meta name="description" content="Fluid Tensors Paper 1 examines how one frozen Qwen transformer weight edit responds to prompt wording. Explore the 64-question GPU confirmation, figures, code and limits.">
   <meta name="author" content="Harmain Dastgir">
   <meta name="theme-color" content="#f3f8f5">
   <meta name="robots" content="index, follow, max-image-preview:large">
@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="One Frozen Edit, Four Ways to Ask | Fluid Tensors">
+  <meta property="og:title" content="Fluid Tensors — One Frozen Edit, Four Ways to Ask">
   <meta property="og:description" content="How much of a recorded transformer weight-editing effect survives a change in prompt wording? Read the analysis, eight figures and the new within-model GPU confirmation.">
   <meta property="og:url" content="https://harmain11.github.io/fluid-tensors/">
   <meta property="og:image" content="https://harmain11.github.io/fluid-tensors/assets/social-cover.png">
@@ -23,11 +23,11 @@
   <meta property="og:image:height" content="640">
   <meta property="og:image:alt" content="Fluid Tensors: One frozen edit, four ways to ask; four recorded functional attenuation contrasts.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="One Frozen Edit, Four Ways to Ask">
+  <meta name="twitter:title" content="Fluid Tensors | One Frozen Edit, Four Ways to Ask">
   <meta name="twitter:description" content="32 archived questions, 64 additional GPU-evaluated questions, eight figures; response geometry, not math accuracy.">
   <meta name="twitter:image" content="https://harmain11.github.io/fluid-tensors/assets/social-cover.png">
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"WebSite","name":"Fluid Tensors — Independent ML Research","url":"https://harmain11.github.io/fluid-tensors/","description":"Source-level audit of prompt-conditioned functional effects in a transformer weight intervention.","inLanguage":"en","author":{"@type":"Person","name":"Harmain Dastgir","sameAs":"https://www.linkedin.com/in/harmain-mughal-7b1845379","affiliation":{"@type":"Organization","name":"Independent Researcher"}},"hasPart":{"@type":"ScholarlyArticle","headline":"One Frozen Edit, Four Ways to Ask: Prompt-Conditioned Functional Effects in a Transformer","identifier":"https://doi.org/10.5281/zenodo.24338059","url":"https://harmain11.github.io/fluid-tensors/papers/one-frozen-edit.html"}}
+    {"@context":"https://schema.org","@type":"WebSite","name":"Fluid Tensors — Independent ML Research","url":"https://harmain11.github.io/fluid-tensors/","description":"Independent research into how one frozen transformer weight intervention changes its measured response across prompt wordings, with a 64-question within-model GPU confirmation.","inLanguage":"en","author":{"@type":"Person","name":"Harmain Dastgir","sameAs":"https://www.linkedin.com/in/harmain-mughal-7b1845379","affiliation":{"@type":"Organization","name":"Independent Researcher"}},"hasPart":{"@type":"ScholarlyArticle","headline":"One Frozen Edit, Four Ways to Ask: Prompt-Conditioned Functional Effects in a Transformer","identifier":"https://doi.org/10.5281/zenodo.24338059","url":"https://harmain11.github.io/fluid-tensors/papers/one-frozen-edit.html"}}
   </script>
   <link rel="modulepreload" href="study-data.mjs">
   <link rel="stylesheet" href="editorial.css?v=paper1-v3-20261118">
@@ -172,6 +172,21 @@
         <p>We reconstructed the factorial table from the archived CSV and verified that every question, direction, wording, and template combination was present exactly once. The principal contrast subtracts each generic-template response from the corresponding math-plus-format response, then averages over 32 question units.</p>
         <p>The original numerical source is checksummed and the plots are reproducible without downloading model weights. This was the <strong>original source-level reanalysis</strong>. A distinct November 18 GPU confirmation is now available in the section above, with its own archived checks and limitations.</p>
         <p><a href="papers/one-frozen-edit.html#methods">Read the complete methodology →</a> &nbsp;·&nbsp; <a href="https://github.com/Harmain11/fluid-tensors">Inspect the public code and data →</a></p>
+      </section>
+
+      <section id="questions" aria-labelledby="questions-heading">
+        <h2 id="questions-heading">Fluid Tensors, explained simply</h2>
+        <p><strong>Fluid Tensors</strong> is an independent research project about targeted changes to transformer model weights. In <a href="papers/one-frozen-edit.html">Paper 1</a>, we ask whether the measured effect of one <em>fixed</em> edit changes when people phrase the same problem differently.</p>
+        <h3>What did Paper 1 actually find?</h3>
+        <p>The measured response to one frozen weight edit depended on wording and instruction format. In the <a href="#confirmation">64-question same-model GPU confirmation</a>, the matched signed-edit contrast averaged <strong>+0.193491</strong> (95% question-bootstrap interval <strong>[+0.166896, +0.219002]</strong>), with <strong>62 of 64</strong> positive question effects. This is a <strong>response-attenuation statistic, not answer accuracy</strong>.</p>
+        <h3>Did it make the AI better at mathematics or reasoning?</h3>
+        <p><strong>That has not been demonstrated here.</strong> The study measures changes in final-token output-logit responses, not whether the model solved more mathematics problems correctly. A separate, controlled accuracy experiment would be required.</p>
+        <h3>Was the finding replicated on other models?</h3>
+        <p><strong>No.</strong> The later GPU test used additional questions, but retained the same Qwen2.5-1.5B-Instruct checkpoint and frozen layer-19 intervention. The evidence supports a <em>within-model</em> pattern, not a general-purpose model repair or a cross-model result.</p>
+        <h3>How is this different from retraining a model?</h3>
+        <p>This paper holds one previously selected weight intervention fixed and compares its measured effects across different prompts. It does not train new weights in these comparisons or claim that the edit improves task performance.</p>
+        <h3>Where can I verify the numbers and cite the work?</h3>
+        <p>See the <a href="papers/one-frozen-edit.html">detailed methods and limitations</a>, <a href="https://github.com/Harmain11/fluid-tensors">reproducible tables, code and figures</a>, and the <a href="https://doi.org/10.5281/zenodo.24338059">Version 3 Zenodo preprint (DOI: 10.5281/zenodo.24338059)</a>. This is a working preprint, not a peer-reviewed paper.</p>
       </section>
 
       <section id="limitations" aria-labelledby="limits-heading">
