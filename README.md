@@ -105,6 +105,23 @@ The archive contains **1,024 complete measurements** from 32 question identifier
 
 > **Scientific scope:** The original six-figure analysis is an archival reanalysis; the separately dated follow-up performed a genuine GPU replay and new-question test **on the same pinned model/edit**. Neither phase measures math-answer correctness, independently selects a new edit, demonstrates general-purpose model repair, or replicates across model families or laboratories. Token-count matching used explicit newline-token IDs and leaves potential formatting, semantic, and positional effects.
 
+## Frequently asked questions
+
+### What is Fluid Tensors?
+**Fluid Tensors** is an independent machine-learning research project examining targeted interventions in transformer model weights and how their measured effects depend on the input. **Paper 1** investigates one historical frozen edit in Qwen2.5-1.5B-Instruct; it is not a claim of general AI self-repair.
+
+### What did Paper 1 find?
+The same fixed weight intervention produced different measured **last-token output-logit attenuation** responses under different question wordings and instruction templates. On **64 additional GSM8K train questions**, the matched signed-edit paired contrast averaged **+0.193491** (95% question-bootstrap interval **[+0.166896, +0.219002]**); **62 of 64** question effects were positive. These numbers describe the model's measured response, **not** the percentage of correct answers.
+
+### Does Fluid Tensors improve math reasoning or accuracy?
+**Paper 1 does not establish that.** The published outcome is response attenuation, not math-answer accuracy. Demonstrating task-level improvement requires a separate, appropriately controlled correctness evaluation.
+
+### Was this independently replicated across different AI models?
+**No.** The November 18 confirmation used the **same pinned Qwen2.5-1.5B-Instruct model and same frozen layer-19 intervention**, but 64 additional questions and an equal-norm orthogonal-edit control. It is a within-model confirmation, not an independent-model or external-laboratory replication.
+
+### How can I read or reproduce the evidence?
+Read the [plain-language research website](https://harmain11.github.io/fluid-tensors/), the [full Paper 1 article](https://harmain11.github.io/fluid-tensors/papers/one-frozen-edit.html), and the [Version 3 preprint with DOI](https://doi.org/10.5281/zenodo.24338059). The repository includes scripts, tables, figures, verification checks and a dated [GPU confirmation package](paper1-confirmation-2026-11-18/).
+
 ## The primary finding
 
 For the historically selected signed direction, we compare mean attenuation under the **math-plus-format instruction** with the **generic instruction**, using the same 32 questions for each wording condition.
